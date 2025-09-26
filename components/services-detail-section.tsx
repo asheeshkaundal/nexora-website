@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
@@ -106,14 +105,7 @@ export function ServicesDetailSection() {
   const [activeService, setActiveService] = useState(services[0]);
 
   return (
-    <section
-      className="py-16 md:py-24"
-      style={{
-        backgroundColor: "hsl(var(--background))",
-        backgroundImage:
-          "radial-gradient(1200px 600px at 25% 10%, hsl(var(--foreground)/0.02) 0%, transparent 50%)",
-      }}
-    >
+    <section className="py-16 md:py-24 bg-background pattern-1">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
@@ -147,7 +139,7 @@ export function ServicesDetailSection() {
                     "data-[state=active]:shadow-sm"
                   )}
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-5 h-5 text-primary" />
                   <span className="text-center leading-tight">
                     {service.title.split(" ").slice(0, 2).join(" ")}
                   </span>
@@ -161,72 +153,64 @@ export function ServicesDetailSection() {
             const Icon = service.icon;
             return (
               <TabsContent key={service.id} value={service.id} className="mt-0">
-                <Card className="border-0 shadow-lg bg-card/95 backdrop-blur-sm">
-                  <CardContent className="p-0">
-                    <div className="grid lg:grid-cols-5 gap-0 min-h-[500px]">
-                      {/* Image Section - 40% */}
-                      <div className="lg:col-span-2 relative overflow-hidden">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/20" />
+                <div className="grid lg:grid-cols-5 gap-0 min-h-[500px] border-2 border-primary/30 rounded-lg overflow-hidden shadow-lg">
+                  {/* Image Section - 40% */}
+                  <div className="lg:col-span-2 relative overflow-hidden group">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:brightness-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/20 transition-opacity duration-700 group-hover:opacity-50" />
+                    <div className="absolute inset-0 bg-primary/0 transition-all duration-700 group-hover:bg-primary/10" />
+                  </div>
+
+                  {/* Content Section - 60% */}
+                  <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center bg-background">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 border border-primary/20">
+                        <Icon className="w-6 h-6 text-primary" />
                       </div>
-
-                      {/* Content Section - 60% */}
-                      <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center">
-                        <div className="flex items-center gap-3 mb-6">
-                          <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 border border-primary/20">
-                            <Icon className="w-6 h-6 text-primary" />
-                          </div>
-                          <h2 className="text-3xl md:text-4xl font-bold text-primary">
-                            {service.title}
-                          </h2>
-                        </div>
-
-                        <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                          {service.brief}
-                        </p>
-
-                        <div className="mb-8">
-                          <h3 className="text-xl font-semibold text-foreground mb-4">
-                            Key Benefits
-                          </h3>
-                          <ul className="space-y-3">
-                            {service.benefits.map((benefit, index) => (
-                              <li
-                                key={index}
-                                className="flex items-start gap-3"
-                              >
-                                <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                                <span className="text-muted-foreground">
-                                  {benefit}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <Button
-                            size="lg"
-                            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
-                          >
-                            Get Quote
-                          </Button>
-                          <Button
-                            variant="outline"
-                            size="lg"
-                            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8"
-                          >
-                            Learn More
-                          </Button>
-                        </div>
-                      </div>
+                      <h2 className="text-3xl md:text-4xl font-bold text-white">
+                        {service.title}
+                      </h2>
                     </div>
-                  </CardContent>
-                </Card>
+
+                    <p className="text-lg text-white mb-8 leading-relaxed">
+                      {service.brief}
+                    </p>
+
+                    <div className="mb-8">
+                      <h3 className="text-xl font-semibold text-white mb-4">
+                        Key Benefits
+                      </h3>
+                      <ul className="space-y-3">
+                        {service.benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                            <span className="text-white">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Button
+                        size="lg"
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+                      >
+                        Get Quote
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        className="border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8"
+                      >
+                        Learn More
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </TabsContent>
             );
           })}
