@@ -12,6 +12,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        // Default sans to Bricolage across the app
+        sans: [
+          "var(--font-bricolage)",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "Noto Sans",
+          "sans-serif",
+        ],
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        "bricolage-grotesque": ["var(--font-bricolage)", "sans-serif"],
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

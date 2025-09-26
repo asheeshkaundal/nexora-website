@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Metadata, Viewport } from "next";
-import { Onest, Poppins } from "next/font/google";
+import { Onest, Poppins, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 
 const onest = Onest({
@@ -13,6 +13,13 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
+});
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bricolage",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -61,7 +68,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${onest.variable} ${poppins.variable} font-sans`}
+      className={`${onest.variable} ${poppins.variable} ${bricolage.variable} font-sans`}
     >
       <body className="antialiased bg-background text-foreground">
         {children}

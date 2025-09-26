@@ -29,7 +29,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="font-poppins">
+    <main>
       <LpNavbar1 />
       <div className="min-h-screen bg-background pattern-1 flex items-center justify-center p-2 sm:p-4">
         {/* Fixed white container */}

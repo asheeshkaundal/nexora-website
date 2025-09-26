@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts are loaded via next/font in app/layout.tsx */
+
 /* Default */
 @layer base {
   :root {
@@ -32,7 +34,7 @@
     /* Ensure outline/ring uses primary brand */
     --ring: 40 49% 50%;
 
-    --radius: 0.750rem;
+    --radius: 0.75rem;
     --chart-1: 173 58% 39%;
     --chart-2: 12 76% 61%;
     --chart-3: 197 37% 24%;
@@ -53,10 +55,7 @@
   }
 }
 
-body {
-  font-family:
-    var(--font-onest), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+/* Font family is handled by Tailwind utilities and Next.js font optimization */
 
 @keyframes patternMove {
   from {
