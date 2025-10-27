@@ -46,15 +46,15 @@ export function ServicesSection() {
       className="relative py-12 md:py-20 overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #0a4f47 0%, #0d5a52 50%, #0a4f47 100%)",
+          "linear-gradient(135deg, #0f1729 0%, #1a2744 50%, #0f1729 100%)",
       }}
       aria-labelledby="services-title"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-white to-transparent rounded-full blur-xl"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-tl from-yellow-300 to-transparent rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-r from-blue-300 to-transparent rounded-full blur-lg"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-blue-400 to-transparent rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-tl from-blue-300 to-transparent rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-r from-cyan-400 to-transparent rounded-full blur-lg"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

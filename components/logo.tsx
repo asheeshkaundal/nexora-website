@@ -6,9 +6,9 @@ export function Logo() {
       className="flex items-center gap-2"
     >
       <img
-        src="/images/new fina logo.png"
+        src="/images/nexora-final.png"
         alt="Nexora Global crest logo"
-        className="h-10 w-auto md:h-12"
+        className="h-14 md:h-16 w-auto"
       />
     </div>
   );

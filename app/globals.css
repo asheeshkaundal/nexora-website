@@ -4,56 +4,70 @@
 
 /* Fonts are loaded via next/font in app/layout.tsx */
 
-/* Default */
+/* Default - Dark Blue Theme */
 @layer base {
   :root {
-    --background: 0 0% 100%; /* white background for clean, professional look */
-    --foreground: 222 47% 11%; /* dark navy text */
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    /* Dark blue background with subtle variations */
+    --background: 222 47% 11%; /* deep navy blue background */
+    --foreground: 210 40% 96%; /* light blue-white text */
 
-    /* Primary = Royal Blue from logo (#1e40af or similar), professional blue */
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 100%;
-    --primary-dark: 221 83% 43%; /* darker blue for hover states */
+    --card: 220 40% 15%; /* dark blue card background */
+    --card-foreground: 210 40% 96%;
 
-    --secondary: 217 91% 60%; /* lighter blue accent */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 210 40% 96%; /* light blue-gray for backgrounds */
-    --muted-foreground: 215 16% 47%;
-    --accent: 199 89% 48%; /* cyan/bright blue accent from logo */
-    --accent-foreground: 0 0% 100%;
+    --popover: 220 40% 15%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Primary = Brighter Blue for accents */
+    --primary: 217 91% 60%; /* bright blue */
+    --primary-foreground: 222 47% 11%; /* dark text on bright blue */
+    --primary-dark: 221 83% 53%; /* medium blue for hover */
+
+    --secondary: 199 89% 48%; /* cyan accent */
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 220 30% 20%; /* muted dark blue */
+    --muted-foreground: 215 20% 65%; /* muted light blue text */
+
+    --accent: 199 89% 48%; /* cyan/bright blue accent */
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 86% 97%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
 
-    /* Ensure outline/ring uses primary brand */
-    --ring: 221 83% 53%;
+    --border: 220 30% 25%; /* dark blue borders */
+    --input: 220 30% 20%; /* dark blue inputs */
+
+    --ring: 217 91% 60%; /* bright blue focus ring */
 
     --radius: 0.75rem;
-    --chart-1: 221 83% 53%;
+
+    --chart-1: 217 91% 60%;
     --chart-2: 199 89% 48%;
-    --chart-3: 217 91% 60%;
+    --chart-3: 221 83% 53%;
     --chart-4: 142 71% 45%;
     --chart-5: 262 83% 58%;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 221 83% 53%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 221 83% 53%;
+
+    --sidebar-background: 220 40% 13%; /* slightly lighter than main bg */
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 220 30% 20%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 220 30% 25%;
+    --sidebar-ring: 217 91% 60%;
+
     --font-onest: "Onest", sans-serif;
 
-    /* Custom token for brand colors from logo */
-    --brand-blue: 221 83% 53%;
+    /* Custom brand colors - dark blue theme */
+    --brand-blue: 217 91% 60%;
     --brand-cyan: 199 89% 48%;
     --brand-navy: 222 47% 11%;
+  }
+
+  /* Ensure body has dark blue background */
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
