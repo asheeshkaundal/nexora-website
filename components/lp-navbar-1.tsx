@@ -39,7 +39,7 @@ const NavMenuItems = ({ className }: NavMenuItemsProps) => (
 
 export function LpNavbar1() {
   return (
-    <nav className="sticky top-0 z-50 bg-background py-3.5 md:py-4 isolate">
+    <nav className="sticky top-0 z-50 bg-background py-0 md:py-0 -my-2 md:-my-3 isolate">
       <div className="container relative px-6 flex flex-row items-center justify-between gap-4 md:gap-6 m-auto">
         <Link href="/">
           <Logo />

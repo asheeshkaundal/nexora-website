@@ -8,7 +8,7 @@ export function Logo() {
       <img
         src="/images/nexora-final.png"
         alt="Nexora Global crest logo"
-        className="h-14 md:h-16 w-auto"
+        className="h-24 md:h-32 w-auto scale-150"
       />
     </div>
   );
