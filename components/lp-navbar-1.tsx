@@ -13,9 +13,9 @@ import {
 } from "@/components/ui/sheet";
 
 const MENU_ITEMS = [
-  { label: "Services", href: "#services" },
+  { label: "Services", href: "/services" },
   { label: "About Us", href: "/about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact-us" },
 ] as const;
 
 interface NavMenuItemsProps {
@@ -44,7 +44,7 @@ export function LpNavbar1() {
       style={{ backgroundColor: "#000B58" }}
     >
       <div className="container relative px-6 flex flex-row items-center justify-between gap-4 md:gap-6 m-auto">
-        <Link href="/">
+        <Link href="/" className="-mt-4 md:-mt-6">
           <Logo />
         </Link>
 
