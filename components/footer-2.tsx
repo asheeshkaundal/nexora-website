@@ -28,7 +28,7 @@ export function Footer2() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <div className="mb-4">
+            <div className="mb-4 scale-150 origin-left">
               <Logo />
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
@@ -63,7 +63,7 @@ export function Footer2() {
               >
                 <Linkedin className="w-4 h-4 text-white" />
               </Link>
-              
+
               <Link
                 href="https://x.com/NXGLOBALpvtltd"
                 target="_blank"
@@ -203,14 +203,19 @@ export function Footer2() {
                   Sales & Communication:
                 </span>
                 <span className="block">FF-69, First Floor, SS Omnia</span>
-                <span className="block">Sector-86, Gurugram, Haryana - 122004</span>
+                <span className="block">
+                  Sector-86, Gurugram, Haryana - 122004
+                </span>
               </li>
               <li className="pt-2">
                 <span className="font-medium text-white block mb-1">
                   Head Office:
                 </span>
                 <span className="block">Nexora Global Headquarters</span>
-                <span className="block">FF-69, First Floor, SS Omnia,Sector-86, Gurugram, Haryana - 122004</span>
+                <span className="block">
+                  FF-69, First Floor, SS Omnia,Sector-86, Gurugram, Haryana -
+                  122004
+                </span>
               </li>
               <li className="pt-2">
                 <Link
