@@ -4,74 +4,76 @@
 
 /* Fonts are loaded via next/font in app/layout.tsx */
 
-/* Default - Dark Blue Theme */
+/* Default - New Color Theme */
 @layer base {
   :root {
-    /* Dark blue background with subtle variations */
-    --background: 222 47% 11%; /* deep navy blue background */
-    --foreground: 210 40% 96%; /* light blue-white text */
+    /* #D3DAD9 - Light blue-gray background */
+    --background: 180 9% 84%; /* #D3DAD9 light background */
+    --foreground: 270 4% 22%; /* #37353E dark gray for text */
 
-    --card: 220 40% 15%; /* dark blue card background */
-    --card-foreground: 210 40% 96%;
+    --card: 0 0% 100%; /* white cards */
+    --card-foreground: 270 4% 22%;
 
-    --popover: 220 40% 15%;
-    --popover-foreground: 210 40% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 4% 22%;
 
-    /* Primary = Brighter Blue for accents */
-    --primary: 217 91% 60%; /* bright blue */
-    --primary-foreground: 222 47% 11%; /* dark text on bright blue */
-    --primary-dark: 221 83% 53%; /* medium blue for hover */
+    /* Primary = #37353E (dark charcoal) */
+    --primary: 270 4% 22%; /* #37353E */
+    --primary-foreground: 180 9% 84%; /* light text on primary */
+    --primary-dark: 270 4% 15%; /* darker shade for hover */
 
-    --secondary: 199 89% 48%; /* cyan accent */
-    --secondary-foreground: 210 40% 96%;
+    /* Secondary = #44444E (medium gray) */
+    --secondary: 240 6% 28%; /* #44444E */
+    --secondary-foreground: 180 9% 84%;
 
-    --muted: 220 30% 20%; /* muted dark blue */
-    --muted-foreground: 215 20% 65%; /* muted light blue text */
+    /* Muted = #715A5A (brownish-gray) */
+    --muted: 0 11% 40%; /* #715A5A */
+    --muted-foreground: 270 4% 22%;
 
-    --accent: 199 89% 48%; /* cyan/bright blue accent */
-    --accent-foreground: 222 47% 11%;
+    /* Accent = #715A5A (brownish-gray) */
+    --accent: 0 11% 40%; /* #715A5A */
+    --accent-foreground: 180 9% 84%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 86% 97%;
 
-    --border: 220 30% 25%; /* dark blue borders */
-    --input: 220 30% 20%; /* dark blue inputs */
+    --border: 180 9% 75%; /* light border based on #D3DAD9 */
+    --input: 180 9% 90%; /* lighter version for inputs */
 
-    --ring: 217 91% 60%; /* bright blue focus ring */
+    --ring: 270 4% 22%; /* #37353E for focus ring */
 
     --radius: 0.75rem;
 
-    --chart-1: 217 91% 60%;
-    --chart-2: 199 89% 48%;
-    --chart-3: 221 83% 53%;
-    --chart-4: 142 71% 45%;
-    --chart-5: 262 83% 58%;
+    --chart-1: 270 4% 22%; /* #37353E */
+    --chart-2: 240 6% 28%; /* #44444E */
+    --chart-3: 0 11% 40%; /* #715A5A */
+    --chart-4: 180 9% 84%; /* #D3DAD9 */
+    --chart-5: 240 6% 35%;
 
-    --sidebar-background: 220 40% 13%; /* slightly lighter than main bg */
-    --sidebar-foreground: 210 40% 96%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 222 47% 11%;
-    --sidebar-accent: 220 30% 20%;
-    --sidebar-accent-foreground: 210 40% 96%;
-    --sidebar-border: 220 30% 25%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 270 4% 22%;
+    --sidebar-primary: 270 4% 22%;
+    --sidebar-primary-foreground: 180 9% 84%;
+    --sidebar-accent: 0 11% 40%;
+    --sidebar-accent-foreground: 180 9% 84%;
+    --sidebar-border: 180 9% 75%;
+    --sidebar-ring: 270 4% 22%;
 
     --font-onest: "Onest", sans-serif;
 
-    /* Custom brand colors - dark blue theme */
-    --brand-blue: 217 91% 60%;
-    --brand-cyan: 199 89% 48%;
-    --brand-navy: 222 47% 11%;
+    /* Custom brand colors */
+    --brand-dark-charcoal: 270 4% 22%; /* #37353E */
+    --brand-medium-gray: 240 6% 28%; /* #44444E */
+    --brand-brownish-gray: 0 11% 40%; /* #715A5A */
+    --brand-light-gray: 180 9% 84%; /* #D3DAD9 */
   }
 
-  /* Ensure body has dark blue background */
+  /* Ensure body has light gray background */
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
-}
-
-/* Font family is handled by Tailwind utilities and Next.js font optimization */
+} /* Font family is handled by Tailwind utilities and Next.js font optimization */
 
 @keyframes patternMove {
   from {

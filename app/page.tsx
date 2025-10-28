@@ -13,7 +13,9 @@ export default function Home() {
   return (
     <main>
       <LpNavbar1 />
-      <HeroSection7 />
+      <div className="mt-8 md:mt-12">
+        <HeroSection7 />
+      </div>
       <ServicesSection />
       <WhyChooseSection />
       <FeatureSection3 />

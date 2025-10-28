@@ -28,7 +28,7 @@ const NavMenuItems = ({ className }: NavMenuItemsProps) => (
       <Link key={label} href={href}>
         <Button
           variant="ghost"
-          className="w-full md:w-auto hover:underline decoration-[hsl(var(--primary))] decoration-2 underline-offset-8"
+          className="w-full md:w-auto text-white hover:text-primary hover:underline decoration-primary decoration-2 underline-offset-8"
         >
           {label}
         </Button>
@@ -39,7 +39,10 @@ const NavMenuItems = ({ className }: NavMenuItemsProps) => (
 
 export function LpNavbar1() {
   return (
-    <nav className="sticky top-0 z-50 bg-background py-0 md:py-0 -my-2 md:-my-3 isolate">
+    <nav
+      className="sticky top-0 z-50 py-0 md:py-0 -my-2 md:-my-3 isolate"
+      style={{ backgroundColor: "#000B58" }}
+    >
       <div className="container relative px-6 flex flex-row items-center justify-between gap-4 md:gap-6 m-auto">
         <Link href="/">
           <Logo />
@@ -62,16 +65,14 @@ export function LpNavbar1() {
               <Button
                 variant="ghost"
                 aria-label="Open menu"
-                className="size-9 flex items-center justify-center"
+                className="size-9 flex items-center justify-center text-white hover:text-primary"
               >
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-background">
+            <SheetContent side="right" className="bg-[#000B58]">
               <SheetHeader>
-                <SheetTitle className="text-foreground">
-                  Nexora Global
-                </SheetTitle>
+                <SheetTitle className="text-white">Nexora Global</SheetTitle>
               </SheetHeader>
               <div className="mt-6 flex flex-col gap-4">
                 <NavMenuItems />
