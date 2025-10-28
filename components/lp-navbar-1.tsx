@@ -40,7 +40,7 @@ const NavMenuItems = ({ className }: NavMenuItemsProps) => (
 export function LpNavbar1() {
   return (
     <nav
-      className="sticky top-0 z-50 py-0 md:py-0 -my-2 md:-my-3 isolate"
+      className="sticky top-0 z-50 py-0 md:py-0 -my-2 md:-my-3 isolate h-20"
       style={{ backgroundColor: "#000B58" }}
     >
       <div className="container relative px-6 flex flex-row items-center justify-between gap-4 md:gap-6 m-auto">
