@@ -79,7 +79,10 @@ export function Footer2() {
 
           {/* Products */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#E5E7EB] border-b-2 pb-2 inline-block" style={{ borderColor: "#6D28D9" }}>
+            <h3
+              className="text-lg font-semibold text-[#E5E7EB] border-b-2 pb-2 inline-block"
+              style={{ borderColor: "#6D28D9" }}
+            >
               Products
             </h3>
             <ul className="space-y-2 text-sm">
@@ -128,7 +131,10 @@ export function Footer2() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#E5E7EB] border-b-2 pb-2 inline-block" style={{ borderColor: "#6D28D9" }}>
+            <h3
+              className="text-lg font-semibold text-[#E5E7EB] border-b-2 pb-2 inline-block"
+              style={{ borderColor: "#6D28D9" }}
+            >
               Services
             </h3>
             <ul className="space-y-2 text-sm">
@@ -177,7 +183,10 @@ export function Footer2() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-[#E5E7EB] border-b-2 pb-2 inline-block" style={{ borderColor: "#6D28D9" }}>
+            <h3
+              className="text-lg font-semibold text-[#E5E7EB] border-b-2 pb-2 inline-block"
+              style={{ borderColor: "#6D28D9" }}
+            >
               Contact
             </h3>
             <ul className="space-y-2 text-sm text-gray-400">
@@ -253,7 +262,8 @@ export function Footer2() {
           <p>© 2025 Nexora Global. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <span style={{ color: "#A78BFA" }}>✦</span> Premium Quality Assured
+              <span style={{ color: "#A78BFA" }}>✦</span> Premium Quality
+              Assured
             </span>
             <span className="flex items-center gap-2">
               <span style={{ color: "#A78BFA" }}>✦</span> Worldwide Service

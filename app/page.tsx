@@ -27,7 +27,10 @@ export default function Home() {
   return (
     <main>
       {/* Navbar header bar - lighter shade */}
-      <div className="h-10 px-6 flex items-center justify-center" style={{ backgroundColor: "#3A3D4A" }}>
+      <div
+        className="h-10 px-6 flex items-center justify-center"
+        style={{ backgroundColor: "#3A3D4A" }}
+      >
         <div className="container mx-auto flex justify-end items-center h-full">
           <div className="flex space-x-3 items-center mt-0">
             <Link

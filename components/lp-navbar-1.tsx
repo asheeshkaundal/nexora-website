@@ -52,10 +52,10 @@ export function LpNavbar1() {
         <div className="hidden md:flex flex-row gap-5 items-center h-full">
           <NavMenuItems />
           <Link href="#get-started">
-            <Button 
+            <Button
               className="text-white font-semibold rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105"
-              style={{ 
-                background: "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)" 
+              style={{
+                background: "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)",
               }}
             >
               Get Started
@@ -77,15 +77,18 @@ export function LpNavbar1() {
             </SheetTrigger>
             <SheetContent side="right" className="bg-[#2D2F39]">
               <SheetHeader>
-                <SheetTitle className="text-[#F9FAFB]">Nexora Global</SheetTitle>
+                <SheetTitle className="text-[#F9FAFB]">
+                  Nexora Global
+                </SheetTitle>
               </SheetHeader>
               <div className="mt-6 flex flex-col gap-4">
                 <NavMenuItems />
                 <Link href="#get-started">
-                  <Button 
+                  <Button
                     className="w-full text-white font-semibold rounded-lg shadow-md transition-all duration-300"
-                    style={{ 
-                      background: "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)" 
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)",
                     }}
                   >
                     Get Started

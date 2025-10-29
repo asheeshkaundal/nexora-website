@@ -58,10 +58,10 @@ export function ServicesSection() {
 
       <div className="container mx-auto px-6 relative z-10">
         <header className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
-          <div 
+          <div
             className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 shadow-lg"
-            style={{ 
-              background: "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)" 
+            style={{
+              background: "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)",
             }}
           >
             <Cog className="w-8 h-8 text-white animate-spin-slow" />

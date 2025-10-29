@@ -209,7 +209,12 @@ export default function AboutPage() {
                   Document Management System (DMS)
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Implementing comprehensive document management solutions that enable secure storage, efficient organization, and seamless retrieval of digital documents. Our DMS ensures regulatory compliance, enhances collaboration, and eliminates paper-based inefficiencies while maintaining complete version control and audit trails.
+                  Implementing comprehensive document management solutions that
+                  enable secure storage, efficient organization, and seamless
+                  retrieval of digital documents. Our DMS ensures regulatory
+                  compliance, enhances collaboration, and eliminates paper-based
+                  inefficiencies while maintaining complete version control and
+                  audit trails.
                 </p>
               </div>
             </div>
