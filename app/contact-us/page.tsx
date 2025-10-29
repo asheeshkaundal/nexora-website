@@ -11,6 +11,11 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   const handleInputChange = (e: any) => {
     const { name, value } = e.target;
@@ -20,12 +25,43 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
-    alert("Message sent successfully!");
-    setFormData({ name: "", phone: "", email: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Message sent successfully! We'll get back to you soon.",
+        });
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus({
+        type: "error",
+        message: "Failed to send message. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -128,11 +164,26 @@ export default function ContactPage() {
                       ></textarea>
                     </div>
 
+                    {submitStatus.type && (
+                      <div
+                        className={`p-3 rounded-md text-sm font-medium ${
+                          submitStatus.type === "success"
+                            ? "bg-green-50 text-green-800 border border-green-200"
+                            : "bg-red-50 text-red-800 border border-red-200"
+                        }`}
+                      >
+                        {submitStatus.message}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full bg-primary hover:bg-[hsl(var(--primary-dark))] text-primary-foreground font-bold py-2.5 px-4 text-sm rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95"
+                      disabled={isSubmitting}
+                      className={`w-full bg-primary hover:bg-[hsl(var(--primary-dark))] text-primary-foreground font-bold py-2.5 px-4 text-sm rounded-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95 ${
+                        isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                      }`}
                     >
-                      SEND MESSAGE
+                      {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                     </button>
                   </form>
                 </div>
