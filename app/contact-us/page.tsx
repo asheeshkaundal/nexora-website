@@ -154,7 +154,7 @@ export default function ContactPage() {
                           PHONE
                         </h3>
                         <p className="text-gray-600 text-sm sm:text-base font-medium">
-                          88888-13841
+                          +91 88888-13841
                         </p>
                       </div>
 
