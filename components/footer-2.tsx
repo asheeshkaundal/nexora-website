@@ -204,7 +204,7 @@ export function Footer2() {
                 </span>
                 <span className="block">FF-69, First Floor, SS Omnia</span>
                 <span className="block">
-                  Sector-86, Gurugram, Haryana - 122004
+                  Sector-86, Gurugram, Haryana - 122012
                 </span>
               </li>
               <li className="pt-2">
@@ -214,7 +214,7 @@ export function Footer2() {
                 <span className="block">Nexora Global Headquarters</span>
                 <span className="block">
                   FF-69, First Floor, SS Omnia,Sector-86, Gurugram, Haryana -
-                  122004
+                  122012
                 </span>
               </li>
               <li className="pt-2">

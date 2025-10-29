@@ -40,16 +40,16 @@ const NavMenuItems = ({ className }: NavMenuItemsProps) => (
 export function LpNavbar1() {
   return (
     <nav
-      className="sticky top-0 z-50 py-0 md:py-0 -my-2 md:-my-3 isolate h-20"
+      className="sticky top-0 z-50 isolate h-20 flex items-center"
       style={{ backgroundColor: "#000B58" }}
     >
-      <div className="container relative px-6 flex flex-row items-center justify-between gap-4 md:gap-6 m-auto">
-        <Link href="/" className="-mt-4 md:-mt-6">
+      <div className="container relative px-6 flex flex-row items-center justify-between gap-4 md:gap-6 m-auto h-full">
+        <Link href="/" className="flex items-center">
           <Logo />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-row gap-5 items-center">
+        <div className="hidden md:flex flex-row gap-5 items-center h-full">
           <NavMenuItems />
           <Link href="#get-started">
             <Button className="bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-dark))] hover:text-foreground rounded-lg shadow-md shadow-black/20">

@@ -8,10 +8,67 @@ import { FaqSection1 } from "@/components/faq-section-1";
 import { Footer2 } from "@/components/footer-2";
 import { ServicesSection } from "@/components/services-section";
 import { WhyChooseSection } from "@/components/why-choose-section";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import Link from "next/link";
+
+// Custom X (formerly Twitter) Icon Component
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    className={className}
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 export default function Home() {
   return (
     <main>
+      {/* Black header bar above navbar */}
+      <div className="bg-black h-10 px-6 flex items-center justify-center">
+        <div className="container mx-auto flex justify-end items-center h-full">
+          <div className="flex space-x-3 items-center mt-0">
+            <Link
+              href="https://www.facebook.com/profile.php?id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-7 h-7 bg-white/10 hover:bg-primary border border-white/20 flex items-center justify-center transition-colors cursor-pointer rounded"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-3.5 h-3.5 text-white" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/nx.global/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-7 h-7 bg-white/10 hover:bg-primary border border-white/20 flex items-center justify-center transition-colors cursor-pointer rounded"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-3.5 h-3.5 text-white" />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/company/nexora-global-pvt-ltd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-7 h-7 bg-white/10 hover:bg-primary border border-white/20 flex items-center justify-center transition-colors cursor-pointer rounded"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-3.5 h-3.5 text-white" />
+            </Link>
+            <Link
+              href="https://x.com/NXGLOBALpvtltd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-7 h-7 bg-white/10 hover:bg-primary border border-white/20 flex items-center justify-center transition-colors cursor-pointer rounded"
+              aria-label="X (formerly Twitter)"
+            >
+              <XIcon className="w-3.5 h-3.5 text-white" />
+            </Link>
+          </div>
+        </div>
+      </div>
       <LpNavbar1 />
       <div className="mt-8 md:mt-12">
         <HeroSection7 />

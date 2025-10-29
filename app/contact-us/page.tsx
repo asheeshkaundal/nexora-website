@@ -154,7 +154,7 @@ export default function ContactPage() {
                           PHONE
                         </h3>
                         <p className="text-gray-600 text-sm sm:text-base font-medium">
-                          773-365-6240
+                          88888-13841
                         </p>
                       </div>
 
@@ -166,7 +166,7 @@ export default function ContactPage() {
                           ADDRESS
                         </h3>
                         <p className="text-gray-600 text-sm sm:text-base text-center font-medium">
-                          1425 N McLean Blvd Elgin, IL
+                          FF-69, First Floor, SS Omnia,Sector-86, Gurugram, Haryana - 122012
                         </p>
                       </div>
 
@@ -178,7 +178,7 @@ export default function ContactPage() {
                           EMAIL
                         </h3>
                         <p className="text-gray-600 text-sm sm:text-base break-all font-medium">
-                          office@statepondllans.com
+                          asheesh.kaundal@nxglobal.in
                         </p>
                       </div>
                     </div>
@@ -215,7 +215,7 @@ export default function ContactPage() {
                           SUNDAY
                         </span>
                         <span className="text-gray-600 text-sm sm:text-base font-medium">
-                          9:00 am - 5:00 pm
+                          Holiday
                         </span>
                       </div>
                     </div>
@@ -226,7 +226,7 @@ export default function ContactPage() {
               {/* Full Width Map Section */}
               <div className="rounded-md overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.8661234567890!2d-88.2816!3d42.0354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f05a1234567890%3A0x1234567890abcdef!2s1425%20N%20McLean%20Blvd%2C%20Elgin%2C%20IL%2060123!5e0!3m2!1sen!2sus!4v1234567890123"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.2!2d77.0866!3d28.4084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSs%20Omnia%2C%20Sector%2086%2C%20Gurugram%2C%20Haryana%20122012%2C%20India!5e0!3m2!1sen!2sin!4v1234567890"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
