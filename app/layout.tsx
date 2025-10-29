@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Nexora Global - Work smarter, not harder with automated workflows",
   description:
     "Automate workflows, streamline tasks, and collaborate seamlessly with Nexora Global. Boost productivity and efficiency for teams of all sizes.",
-    
+
   keywords:
     "workflow automation, task management, team collaboration, productivity tools",
   authors: [{ name: "Nexora Global Team" }],
@@ -47,8 +47,13 @@ export const metadata: Metadata = {
       "Streamline your team's workflow with Nexora Global's powerful automation tools.",
   },
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "64x64", type: "image/png" },
+      { url: "/favicon.png", sizes: "96x96", type: "image/png" },
+    ],
     apple: "/apple-icon.png",
+    shortcut: "/favicon-final.png",
   },
 };
 

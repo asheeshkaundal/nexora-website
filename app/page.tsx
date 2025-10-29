@@ -26,45 +26,45 @@ const XIcon = ({ className }: { className?: string }) => (
 export default function Home() {
   return (
     <main>
-      {/* Black header bar above navbar */}
-      <div className="bg-black h-10 px-6 flex items-center justify-center">
+      {/* Navbar header bar - lighter shade */}
+      <div className="h-10 px-6 flex items-center justify-center" style={{ backgroundColor: "#3A3D4A" }}>
         <div className="container mx-auto flex justify-end items-center h-full">
           <div className="flex space-x-3 items-center mt-0">
             <Link
               href="https://www.facebook.com/profile.php?id"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-7 h-7 bg-white/10 hover:bg-primary border border-white/20 flex items-center justify-center transition-colors cursor-pointer rounded"
+              className="w-7 h-7 bg-white/10 hover:bg-[#6D28D9] border border-white/20 flex items-center justify-center transition-all duration-300 cursor-pointer rounded"
               aria-label="Facebook"
             >
-              <Facebook className="w-3.5 h-3.5 text-white" />
+              <Facebook className="w-3.5 h-3.5 text-[#F9FAFB]" />
             </Link>
             <Link
               href="https://www.instagram.com/nx.global/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-7 h-7 bg-white/10 hover:bg-primary border border-white/20 flex items-center justify-center transition-colors cursor-pointer rounded"
+              className="w-7 h-7 bg-white/10 hover:bg-[#6D28D9] border border-white/20 flex items-center justify-center transition-all duration-300 cursor-pointer rounded"
               aria-label="Instagram"
             >
-              <Instagram className="w-3.5 h-3.5 text-white" />
+              <Instagram className="w-3.5 h-3.5 text-[#F9FAFB]" />
             </Link>
             <Link
               href="https://www.linkedin.com/company/nexora-global-pvt-ltd"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-7 h-7 bg-white/10 hover:bg-primary border border-white/20 flex items-center justify-center transition-colors cursor-pointer rounded"
+              className="w-7 h-7 bg-white/10 hover:bg-[#6D28D9] border border-white/20 flex items-center justify-center transition-all duration-300 cursor-pointer rounded"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-3.5 h-3.5 text-white" />
+              <Linkedin className="w-3.5 h-3.5 text-[#F9FAFB]" />
             </Link>
             <Link
               href="https://x.com/NXGLOBALpvtltd"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-7 h-7 bg-white/10 hover:bg-primary border border-white/20 flex items-center justify-center transition-colors cursor-pointer rounded"
+              className="w-7 h-7 bg-white/10 hover:bg-[#6D28D9] border border-white/20 flex items-center justify-center transition-all duration-300 cursor-pointer rounded"
               aria-label="X (formerly Twitter)"
             >
-              <XIcon className="w-3.5 h-3.5 text-white" />
+              <XIcon className="w-3.5 h-3.5 text-[#F9FAFB]" />
             </Link>
           </div>
         </div>

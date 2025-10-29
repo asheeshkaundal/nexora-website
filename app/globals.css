@@ -4,71 +4,80 @@
 
 /* Fonts are loaded via next/font in app/layout.tsx */
 
-/* Default - New Color Theme */
+/* Light Theme - Modern Gray & Purple */
 @layer base {
   :root {
-    /* #D3DAD9 - Light blue-gray background */
-    --background: 180 9% 84%; /* #D3DAD9 light background */
-    --foreground: 270 4% 22%; /* #37353E dark gray for text */
+    /* Background Colors */
+    --background: 220 14% 96%; /* #F3F4F6 - Hero/Main BG (light gray) */
+    --foreground: 0 0% 12%; /* #1E1E1E - Dark text */
 
-    --card: 0 0% 100%; /* white cards */
-    --card-foreground: 270 4% 22%;
+    /* Card Colors */
+    --card: 220 13% 91%; /* #E5E7EB - Cards/Highlights (light gray) */
+    --card-foreground: 0 0% 12%; /* #1E1E1E - Dark text on cards */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 270 4% 22%;
+    --popover: 220 13% 91%; /* #E5E7EB */
+    --popover-foreground: 0 0% 12%;
 
-    /* Primary = #37353E (dark charcoal) */
-    --primary: 270 4% 22%; /* #37353E */
-    --primary-foreground: 180 9% 84%; /* light text on primary */
-    --primary-dark: 270 4% 15%; /* darker shade for hover */
+    /* Primary = Purple gradient (#6D28D9 → #A78BFA) */
+    --primary: 263 70% 50%; /* #6D28D9 - Purple gradient start */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF - White text on buttons */
+    --primary-gradient-end: 256 56% 77%; /* #A78BFA - Light purple gradient end */
 
-    /* Secondary = #44444E (medium gray) */
-    --secondary: 240 6% 28%; /* #44444E */
-    --secondary-foreground: 180 9% 84%;
+    /* Secondary = Navbar color */
+    --secondary: 225 8% 20%; /* #2D2F39 - Navbar/Header */
+    --secondary-foreground: 220 9% 98%; /* #F9FAFB - Light text on navbar */
 
-    /* Muted = #715A5A (brownish-gray) */
-    --muted: 0 11% 40%; /* #715A5A */
-    --muted-foreground: 270 4% 22%;
+    /* Muted */
+    --muted: 220 13% 91%; /* #E5E7EB - Cards/Highlights */
+    --muted-foreground: 0 0% 40%; /* Darker gray for muted text */
 
-    /* Accent = #715A5A (brownish-gray) */
-    --accent: 0 11% 40%; /* #715A5A */
-    --accent-foreground: 180 9% 84%;
+    /* Accent = Purple */
+    --accent: 263 70% 50%; /* #6D28D9 - Purple for accents */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
 
     --destructive: 0 72% 51%;
-    --destructive-foreground: 0 86% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 180 9% 75%; /* light border based on #D3DAD9 */
-    --input: 180 9% 90%; /* lighter version for inputs */
+    --border: 220 13% 85%; /* Slightly darker than cards for borders */
+    --input: 220 13% 91%; /* #E5E7EB - Cards color for inputs */
 
-    --ring: 270 4% 22%; /* #37353E for focus ring */
+    --ring: 263 70% 50%; /* #6D28D9 - Purple for focus ring */
 
     --radius: 0.75rem;
 
-    --chart-1: 270 4% 22%; /* #37353E */
-    --chart-2: 240 6% 28%; /* #44444E */
-    --chart-3: 0 11% 40%; /* #715A5A */
-    --chart-4: 180 9% 84%; /* #D3DAD9 */
-    --chart-5: 240 6% 35%;
+    /* Chart Colors */
+    --chart-1: 263 70% 50%; /* #6D28D9 - Purple */
+    --chart-2: 256 56% 77%; /* #A78BFA - Light purple */
+    --chart-3: 225 8% 20%; /* #2D2F39 - Navbar */
+    --chart-4: 220 13% 91%; /* #E5E7EB - Cards */
+    --chart-5: 220 14% 96%; /* #F3F4F6 - Hero BG */
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 270 4% 22%;
-    --sidebar-primary: 270 4% 22%;
-    --sidebar-primary-foreground: 180 9% 84%;
-    --sidebar-accent: 0 11% 40%;
-    --sidebar-accent-foreground: 180 9% 84%;
-    --sidebar-border: 180 9% 75%;
-    --sidebar-ring: 270 4% 22%;
+    /* Sidebar */
+    --sidebar-background: 225 8% 20%; /* #2D2F39 - Navbar/Header */
+    --sidebar-foreground: 220 9% 98%; /* #F9FAFB */
+    --sidebar-primary: 263 70% 50%; /* #6D28D9 - Purple */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 256 56% 77%; /* #A78BFA - Light purple */
+    --sidebar-accent-foreground: 0 0% 12%;
+    --sidebar-border: 220 13% 85%;
+    --sidebar-ring: 263 70% 50%;
 
     --font-onest: "Onest", sans-serif;
 
     /* Custom brand colors */
-    --brand-dark-charcoal: 270 4% 22%; /* #37353E */
-    --brand-medium-gray: 240 6% 28%; /* #44444E */
-    --brand-brownish-gray: 0 11% 40%; /* #715A5A */
-    --brand-light-gray: 180 9% 84%; /* #D3DAD9 */
+    --brand-navbar-header: 225 8% 20%; /* #2D2F39 - Navbar/Header */
+    --brand-navbar-text: 220 9% 98%; /* #F9FAFB - Light text on navbar */
+    --brand-hero-bg: 220 14% 96%; /* #F3F4F6 - Hero/Main BG */
+    --brand-cards: 220 13% 91%; /* #E5E7EB - Cards/Highlights */
+    --brand-footer: 222 14% 13%; /* #1F232C - Footer */
+    --brand-footer-text: 220 13% 91%; /* #E5E7EB - Footer text */
+    --brand-purple-start: 263 70% 50%; /* #6D28D9 - Button gradient start */
+    --brand-purple-end: 256 56% 77%; /* #A78BFA - Button gradient end */
+    --brand-button-text: 0 0% 100%; /* #FFFFFF - Button text */
+    --brand-text-dark: 0 0% 12%; /* #1E1E1E - Primary text */
   }
 
-  /* Ensure body has light gray background */
+  /* Body with light background */
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));

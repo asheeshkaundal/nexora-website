@@ -80,12 +80,11 @@ export default function AboutPage() {
       {/* Stats Section */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {[
               { icon: Users, value: "500+", label: "Happy Clients" },
-              { icon: Award, value: "15+", label: "Awards Won" },
               { icon: TrendingUp, value: "98%", label: "Success Rate" },
-              { icon: Globe, value: "25+", label: "Countries Served" },
+              { icon: Globe, value: "Pan India", label: "Service Coverage" },
             ].map((stat, i) => {
               const Icon = stat.icon;
               return (
@@ -121,7 +120,7 @@ export default function AboutPage() {
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 Nexora Global Pvt Ltd is a dynamic and forward-thinking
-                technology company, established in 2025. We are dedicated to
+                technology company, established in 2015. We are dedicated to
                 empowering businesses worldwide with cutting-edge solutions that
                 drive efficiency, foster innovation, and accelerate digital
                 transformation.
@@ -202,6 +201,15 @@ export default function AboutPage() {
                   information from analog to digital) and digitalization
                   (leveraging digital technology to change business models and
                   operations).
+                </p>
+              </div>
+
+              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
+                <h3 className="text-2xl font-bold text-foreground mb-3">
+                  Document Management System (DMS)
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Implementing comprehensive document management solutions that enable secure storage, efficient organization, and seamless retrieval of digital documents. Our DMS ensures regulatory compliance, enhances collaboration, and eliminates paper-based inefficiencies while maintaining complete version control and audit trails.
                 </p>
               </div>
             </div>

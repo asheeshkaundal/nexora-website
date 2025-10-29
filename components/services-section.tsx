@@ -45,33 +45,37 @@ export function ServicesSection() {
     <section
       className="relative py-12 md:py-20 overflow-hidden"
       style={{
-        background:
-          "linear-gradient(135deg, #37353E 0%, #44444E 50%, #37353E 100%)",
+        background: "#F3F4F6",
       }}
       aria-labelledby="services-title"
     >
-      {/* Decorative background elements */}
+      {/* Decorative background elements with purple glow */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-[#D3DAD9] to-transparent rounded-full blur-xl"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-tl from-[#715A5A] to-transparent rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-r from-[#D3DAD9] to-transparent rounded-full blur-lg"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-[#6D28D9] to-transparent rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-gradient-to-tl from-[#A78BFA] to-transparent rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-r from-[#6D28D9] to-transparent rounded-full blur-lg"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <header className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#715A5A] to-[#44444E] rounded-full mb-4 shadow-lg">
+          <div 
+            className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 shadow-lg"
+            style={{ 
+              background: "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)" 
+            }}
+          >
             <Cog className="w-8 h-8 text-white animate-spin-slow" />
           </div>
           <h2
             id="services-title"
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white text-balance mb-6 tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1E1E1E] text-balance mb-6 tracking-tight"
           >
             ENABLING DIGITAL FUTURES
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#D3DAD9] to-[#715A5A]">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#A78BFA]">
               WITH NEXORA
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             We believe the future belongs to businesses that embrace technology
             and innovation
           </p>

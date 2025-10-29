@@ -28,7 +28,7 @@ const NavMenuItems = ({ className }: NavMenuItemsProps) => (
       <Link key={label} href={href}>
         <Button
           variant="ghost"
-          className="w-full md:w-auto text-white hover:text-primary hover:underline decoration-primary decoration-2 underline-offset-8"
+          className="w-full md:w-auto text-[#F9FAFB] hover:text-[#A78BFA] hover:underline decoration-[#A78BFA] decoration-2 underline-offset-8 transition-all duration-300"
         >
           {label}
         </Button>
@@ -41,7 +41,7 @@ export function LpNavbar1() {
   return (
     <nav
       className="sticky top-0 z-50 isolate h-20 flex items-center"
-      style={{ backgroundColor: "#000B58" }}
+      style={{ backgroundColor: "#2D2F39" }}
     >
       <div className="container relative px-6 flex flex-row items-center justify-between gap-4 md:gap-6 m-auto h-full">
         <Link href="/" className="flex items-center">
@@ -52,7 +52,12 @@ export function LpNavbar1() {
         <div className="hidden md:flex flex-row gap-5 items-center h-full">
           <NavMenuItems />
           <Link href="#get-started">
-            <Button className="bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-dark))] hover:text-foreground rounded-lg shadow-md shadow-black/20">
+            <Button 
+              className="text-white font-semibold rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105"
+              style={{ 
+                background: "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)" 
+              }}
+            >
               Get Started
             </Button>
           </Link>
@@ -65,19 +70,24 @@ export function LpNavbar1() {
               <Button
                 variant="ghost"
                 aria-label="Open menu"
-                className="size-9 flex items-center justify-center text-white hover:text-primary"
+                className="size-9 flex items-center justify-center text-[#F9FAFB] hover:text-[#A78BFA]"
               >
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-[#000B58]">
+            <SheetContent side="right" className="bg-[#2D2F39]">
               <SheetHeader>
-                <SheetTitle className="text-white">Nexora Global</SheetTitle>
+                <SheetTitle className="text-[#F9FAFB]">Nexora Global</SheetTitle>
               </SheetHeader>
               <div className="mt-6 flex flex-col gap-4">
                 <NavMenuItems />
                 <Link href="#get-started">
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-dark))] hover:text-foreground rounded-lg shadow-md shadow-black/20">
+                  <Button 
+                    className="w-full text-white font-semibold rounded-lg shadow-md transition-all duration-300"
+                    style={{ 
+                      background: "linear-gradient(135deg, #6D28D9 0%, #A78BFA 100%)" 
+                    }}
+                  >
                     Get Started
                   </Button>
                 </Link>
