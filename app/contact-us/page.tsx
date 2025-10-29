@@ -166,7 +166,8 @@ export default function ContactPage() {
                           ADDRESS
                         </h3>
                         <p className="text-gray-600 text-sm sm:text-base text-center font-medium">
-                          FF-69, First Floor, SS Omnia,Sector-86, Gurugram, Haryana - 122012
+                          FF-69, First Floor, SS Omnia,Sector-86, Gurugram,
+                          Haryana - 122012
                         </p>
                       </div>
 
