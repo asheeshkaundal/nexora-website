@@ -85,24 +85,36 @@ export function ServicesSection() {
           {services.map((service, i) => {
             const Icon = service.icon;
             const isITConsulting = service.title === "Strategic IT Consulting";
+            const isERP = service.title === "Enterprise Resource Planning";
+            const isCorporateDigital =
+              service.title === "Corporate Digitalization";
             return (
               <Card
                 key={i}
                 className={`group h-full border-0 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden ${
-                  isITConsulting ? "text-white" : ""
+                  isITConsulting || isERP || isCorporateDigital
+                    ? "text-white"
+                    : ""
                 }`}
                 style={{
-                  backgroundColor: isITConsulting ? "transparent" : "#ffffff",
+                  backgroundColor:
+                    isITConsulting || isERP || isCorporateDigital
+                      ? "transparent"
+                      : "#ffffff",
                   boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
                   backgroundImage: isITConsulting
                     ? "url('/it_consul.jpg')"
+                    : isERP
+                    ? "url('/ERP-image.jpg')"
+                    : isCorporateDigital
+                    ? "url('/cooperate-digitilization.png')"
                     : "none",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
               >
-                {/* High contrast overlay for IT Consulting card */}
-                {isITConsulting && (
+                {/* High contrast overlay for IT Consulting, ERP and Corporate Digitalization cards */}
+                {(isITConsulting || isERP || isCorporateDigital) && (
                   <>
                     {/* Film grain texture */}
                     <div
@@ -120,12 +132,12 @@ export function ServicesSection() {
                 )}
                 <CardHeader
                   className={`flex flex-col p-6 relative z-10 h-full ${
-                    isITConsulting
+                    isITConsulting || isERP || isCorporateDigital
                       ? "justify-end text-left"
                       : "items-center text-center"
                   }`}
                 >
-                  {!isITConsulting && (
+                  {!isITConsulting && !isERP && !isCorporateDigital && (
                     <div
                       className={`flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} shadow-md mb-4 group-hover:scale-110 transition-transform duration-300`}
                     >
@@ -133,24 +145,27 @@ export function ServicesSection() {
                     </div>
                   )}
 
-                  {isITConsulting && (
-                    <div className="flex items-center justify-start mb-4 group-hover:mb-5 transition-all duration-300">
-                      <div className="p-2 rounded-lg bg-amber-400/20 backdrop-blur-sm border border-amber-400/30 group-hover:bg-amber-400/30 group-hover:border-amber-400/50 transition-all duration-300">
-                        <Icon className="w-6 h-6 text-amber-300 group-hover:text-amber-200 drop-shadow-md" />
+                  {isITConsulting ||
+                    isERP ||
+                    (isCorporateDigital && (
+                      <div className="flex items-center justify-start mb-4 group-hover:mb-5 transition-all duration-300">
+                        <div className="p-2 rounded-lg bg-amber-400/20 backdrop-blur-sm border border-amber-400/30 group-hover:bg-amber-400/30 group-hover:border-amber-400/50 transition-all duration-300">
+                          <Icon className="w-6 h-6 text-amber-300 group-hover:text-amber-200 drop-shadow-md" />
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    ))}
 
                   <CardTitle
                     className={`font-black mb-3 tracking-tight ${
-                      isITConsulting
+                      isITConsulting || isERP || isCorporateDigital
                         ? "text-2xl lg:text-3xl text-white font-inter group-hover:text-amber-50 transition-colors duration-300"
                         : "text-lg text-slate-800"
                     }`}
                     style={{
-                      textShadow: isITConsulting
-                        ? "2px 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6)"
-                        : "none",
+                      textShadow:
+                        isITConsulting || isERP || isCorporateDigital
+                          ? "2px 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6)"
+                          : "none",
                     }}
                   >
                     {service.title}
@@ -158,14 +173,15 @@ export function ServicesSection() {
 
                   <CardDescription
                     className={`leading-relaxed font-medium ${
-                      isITConsulting
+                      isITConsulting || isERP || isCorporateDigital
                         ? "text-lg text-white/95 font-inter group-hover:text-amber-50/90 transition-colors duration-300"
                         : "text-sm text-slate-600"
                     }`}
                     style={{
-                      textShadow: isITConsulting
-                        ? "1px 1px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)"
-                        : "none",
+                      textShadow:
+                        isITConsulting || isERP || isCorporateDigital
+                          ? "1px 1px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)"
+                          : "none",
                     }}
                   >
                     {service.description}
