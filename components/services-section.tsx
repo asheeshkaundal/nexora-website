@@ -264,7 +264,8 @@ export function ServicesSection() {
                         !isCorporateDigital &&
                         !isCorporateDigitization &&
                         !isDMS &&
-                        !isWorkflow && (
+                        !isWorkflow &&
+                        !isNexoraAI && (
                           <div
                             className={`flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} shadow-md mb-4 group-hover:scale-110 transition-transform duration-300`}
                           >
@@ -272,18 +273,19 @@ export function ServicesSection() {
                           </div>
                         )}
 
-                      {isITConsulting ||
+                      {(isITConsulting ||
                         isERP ||
                         isCorporateDigital ||
                         isCorporateDigitization ||
                         isDMS ||
-                        (isWorkflow && (
-                          <div className="flex items-center justify-start mb-4 group-hover:mb-5 transition-all duration-300">
-                            <div className="p-2 rounded-lg bg-amber-400/20 backdrop-blur-sm border border-amber-400/30 group-hover:bg-amber-400/30 group-hover:border-amber-400/50 transition-all duration-300">
-                              <Icon className="w-6 h-6 text-amber-300 group-hover:text-amber-200 drop-shadow-md" />
-                            </div>
+                        isWorkflow ||
+                        isNexoraAI) && (
+                        <div className="flex items-center justify-start mb-4 group-hover:mb-5 transition-all duration-300">
+                          <div className="p-2 rounded-lg bg-amber-400/20 backdrop-blur-sm border border-amber-400/30 group-hover:bg-amber-400/30 group-hover:border-amber-400/50 transition-all duration-300">
+                            <Icon className="w-6 h-6 text-amber-300 group-hover:text-amber-200 drop-shadow-md" />
                           </div>
-                        ))}
+                        </div>
+                      )}
 
                       <CardTitle
                         className={`font-black mb-3 tracking-tight ${
@@ -292,7 +294,8 @@ export function ServicesSection() {
                           isCorporateDigital ||
                           isCorporateDigitization ||
                           isDMS ||
-                          isWorkflow
+                          isWorkflow ||
+                          isNexoraAI
                             ? "text-2xl lg:text-3xl text-white font-inter group-hover:text-amber-50 transition-colors duration-300"
                             : "text-lg text-slate-800"
                         }`}
@@ -303,7 +306,8 @@ export function ServicesSection() {
                             isCorporateDigital ||
                             isCorporateDigitization ||
                             isDMS ||
-                            isWorkflow
+                            isWorkflow ||
+                            isNexoraAI
                               ? "2px 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6)"
                               : "none",
                         }}
@@ -318,7 +322,8 @@ export function ServicesSection() {
                           isCorporateDigital ||
                           isCorporateDigitization ||
                           isDMS ||
-                          isWorkflow
+                          isWorkflow ||
+                          isNexoraAI
                             ? "text-lg text-white/95 font-inter group-hover:text-amber-50/90 transition-colors duration-300"
                             : "text-sm text-slate-600"
                         }`}
@@ -329,7 +334,8 @@ export function ServicesSection() {
                             isCorporateDigital ||
                             isCorporateDigitization ||
                             isDMS ||
-                            isWorkflow
+                            isWorkflow ||
+                            isNexoraAI
                               ? "1px 1px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)"
                               : "none",
                         }}
