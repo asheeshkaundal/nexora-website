@@ -22,6 +22,13 @@ import { useState } from "react";
 
 const services = [
   {
+    icon: Sparkles,
+    title: "Nexora AI",
+    description: "Intelligent automation & AI-driven business solutions",
+    gradient: "from-pink-500 to-rose-600",
+    bgAccent: "bg-pink-50",
+  },
+  {
     icon: Briefcase,
     title: "Strategic IT Consulting",
     description: "Guidance for seamless tech adoption & digital growth",
@@ -48,13 +55,6 @@ const services = [
     description: "Secure document handling with compliance features",
     gradient: "from-orange-500 to-red-600",
     bgAccent: "bg-orange-50",
-  },
-  {
-    icon: Sparkles,
-    title: "Nexora AI",
-    description: "AI-powered solutions for intelligent automation",
-    gradient: "from-pink-500 to-rose-600",
-    bgAccent: "bg-pink-50",
   },
   {
     icon: Building2,
@@ -172,18 +172,35 @@ export function ServicesSection() {
                 const isERP = service.title === "Enterprise Resource Planning";
                 const isCorporateDigital =
                   service.title === "Corporate Digitalization";
+                const isCorporateDigitization =
+                  service.title === "Corporate Digitization";
                 const isDMS = service.title === "Document Management";
+                const isWorkflow =
+                  service.title === "Workflow Management System";
+                const isNexoraAI = service.title === "Nexora AI";
                 return (
                   <Card
                     key={i}
                     className={`group w-[calc(25%-1.125rem)] min-w-[calc(25%-1.125rem)] max-w-[calc(25%-1.125rem)] h-[420px] border-0 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden flex-shrink-0 ${
-                      isITConsulting || isERP || isCorporateDigital || isDMS
+                      isITConsulting ||
+                      isERP ||
+                      isCorporateDigital ||
+                      isCorporateDigitization ||
+                      isDMS ||
+                      isWorkflow ||
+                      isNexoraAI
                         ? "text-white"
                         : ""
                     }`}
                     style={{
                       backgroundColor:
-                        isITConsulting || isERP || isCorporateDigital || isDMS
+                        isITConsulting ||
+                        isERP ||
+                        isCorporateDigital ||
+                        isCorporateDigitization ||
+                        isDMS ||
+                        isWorkflow ||
+                        isNexoraAI
                           ? "transparent"
                           : "#ffffff",
                       boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
@@ -193,18 +210,27 @@ export function ServicesSection() {
                         ? "url('/ERP-image.jpg')"
                         : isCorporateDigital
                         ? "url('/Data-scanning.jpg')"
+                        : isCorporateDigitization
+                        ? "url('/Digitization-image.jpg')"
                         : isDMS
-                        ? "url('/DMS-Image.jpg')"
+                        ? "url('/DMS-new.jpg')"
+                        : isWorkflow
+                        ? "url('/workflow-management.jpg')"
+                        : isNexoraAI
+                        ? "url('/Nexora-Ai.jpg')"
                         : "none",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }}
                   >
-                    {/* High contrast overlay for IT Consulting, ERP, Corporate Digitalization and DMS cards */}
+                    {/* High contrast overlay for IT Consulting, ERP, Corporate Digitalization, Corporate Digitization, DMS, Workflow and Nexora AI cards */}
                     {(isITConsulting ||
                       isERP ||
                       isCorporateDigital ||
-                      isDMS) && (
+                      isCorporateDigitization ||
+                      isDMS ||
+                      isWorkflow ||
+                      isNexoraAI) && (
                       <>
                         {/* Film grain texture */}
                         <div
@@ -222,7 +248,13 @@ export function ServicesSection() {
                     )}
                     <CardHeader
                       className={`flex flex-col p-6 relative z-10 h-full ${
-                        isITConsulting || isERP || isCorporateDigital || isDMS
+                        isITConsulting ||
+                        isERP ||
+                        isCorporateDigital ||
+                        isCorporateDigitization ||
+                        isDMS ||
+                        isWorkflow ||
+                        isNexoraAI
                           ? "justify-end text-left"
                           : "items-center text-center"
                       }`}
@@ -230,7 +262,9 @@ export function ServicesSection() {
                       {!isITConsulting &&
                         !isERP &&
                         !isCorporateDigital &&
-                        !isDMS && (
+                        !isCorporateDigitization &&
+                        !isDMS &&
+                        !isWorkflow && (
                           <div
                             className={`flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} shadow-md mb-4 group-hover:scale-110 transition-transform duration-300`}
                           >
@@ -241,7 +275,9 @@ export function ServicesSection() {
                       {isITConsulting ||
                         isERP ||
                         isCorporateDigital ||
-                        (isDMS && (
+                        isCorporateDigitization ||
+                        isDMS ||
+                        (isWorkflow && (
                           <div className="flex items-center justify-start mb-4 group-hover:mb-5 transition-all duration-300">
                             <div className="p-2 rounded-lg bg-amber-400/20 backdrop-blur-sm border border-amber-400/30 group-hover:bg-amber-400/30 group-hover:border-amber-400/50 transition-all duration-300">
                               <Icon className="w-6 h-6 text-amber-300 group-hover:text-amber-200 drop-shadow-md" />
@@ -251,7 +287,12 @@ export function ServicesSection() {
 
                       <CardTitle
                         className={`font-black mb-3 tracking-tight ${
-                          isITConsulting || isERP || isCorporateDigital || isDMS
+                          isITConsulting ||
+                          isERP ||
+                          isCorporateDigital ||
+                          isCorporateDigitization ||
+                          isDMS ||
+                          isWorkflow
                             ? "text-2xl lg:text-3xl text-white font-inter group-hover:text-amber-50 transition-colors duration-300"
                             : "text-lg text-slate-800"
                         }`}
@@ -260,7 +301,9 @@ export function ServicesSection() {
                             isITConsulting ||
                             isERP ||
                             isCorporateDigital ||
-                            isDMS
+                            isCorporateDigitization ||
+                            isDMS ||
+                            isWorkflow
                               ? "2px 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6)"
                               : "none",
                         }}
@@ -270,7 +313,12 @@ export function ServicesSection() {
 
                       <CardDescription
                         className={`leading-relaxed font-medium ${
-                          isITConsulting || isERP || isCorporateDigital || isDMS
+                          isITConsulting ||
+                          isERP ||
+                          isCorporateDigital ||
+                          isCorporateDigitization ||
+                          isDMS ||
+                          isWorkflow
                             ? "text-lg text-white/95 font-inter group-hover:text-amber-50/90 transition-colors duration-300"
                             : "text-sm text-slate-600"
                         }`}
@@ -279,7 +327,9 @@ export function ServicesSection() {
                             isITConsulting ||
                             isERP ||
                             isCorporateDigital ||
-                            isDMS
+                            isCorporateDigitization ||
+                            isDMS ||
+                            isWorkflow
                               ? "1px 1px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)"
                               : "none",
                         }}

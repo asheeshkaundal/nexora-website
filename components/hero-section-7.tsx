@@ -27,9 +27,9 @@ export function HeroSection7() {
       <div className="absolute inset-0 bg-black/30 z-10"></div>
 
       <div className="container px-6 mx-auto relative z-20">
-        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-12">
-          {/* Left copy: ~60% width on large screens */}
-          <div className="flex-1 lg:basis-3/5">
+        <div className="flex flex-col items-center justify-center text-center">
+          {/* Center content */}
+          <div className="max-w-4xl">
             <h1
               id="hero-heading"
               className="text-4xl lg:text-6xl font-bold text-balance"
@@ -41,7 +41,7 @@ export function HeroSection7() {
               Transforming Businesses Through Technology
             </h1>
             <p
-              className="mt-5 text-base lg:text-lg max-w-2xl"
+              className="mt-5 text-base lg:text-lg max-w-2xl mx-auto"
               style={{
                 color: "#F3F4F6",
                 textShadow: "1px 1px 4px rgba(0,0,0,0.7)",
@@ -52,7 +52,7 @@ export function HeroSection7() {
               digitalization, workflow management, and secure document systems.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               {/* Primary: Purple gradient */}
               <Button className="bg-gradient-to-r from-[#6D28D9] to-[#A78BFA] text-white hover:from-[#5B21B6] hover:to-[#9333EA] rounded-lg shadow-lg">
                 Get Started
@@ -65,21 +65,6 @@ export function HeroSection7() {
                 Learn More
                 <ArrowRight className="ml-2" />
               </Button>
-            </div>
-          </div>
-
-          {/* Right visual: professional business/technology imagery */}
-          <div className="w-full lg:basis-2/5">
-            <div className="overflow-hidden rounded-xl border bg-background shadow-xl">
-              <AspectRatio ratio={16 / 9}>
-                <Image
-                  src="/professional-business-technology-team-working.jpg"
-                  alt="Team collaborating with modern technology dashboards"
-                  fill
-                  priority
-                  className="object-cover"
-                />
-              </AspectRatio>
             </div>
           </div>
         </div>
