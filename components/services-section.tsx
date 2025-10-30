@@ -7,7 +7,18 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
-import { Briefcase, Cog, RefreshCw, FileLock } from "lucide-react";
+import {
+  Briefcase,
+  Cog,
+  RefreshCw,
+  FileLock,
+  Sparkles,
+  Building2,
+  GitBranch,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { useState } from "react";
 
 const services = [
   {
@@ -38,9 +49,42 @@ const services = [
     gradient: "from-orange-500 to-red-600",
     bgAccent: "bg-orange-50",
   },
+  {
+    icon: Sparkles,
+    title: "Nexora AI",
+    description: "AI-powered solutions for intelligent automation",
+    gradient: "from-pink-500 to-rose-600",
+    bgAccent: "bg-pink-50",
+  },
+  {
+    icon: Building2,
+    title: "Corporate Digitization",
+    description: "Digital transformation for modern enterprises",
+    gradient: "from-indigo-500 to-blue-600",
+    bgAccent: "bg-indigo-50",
+  },
+  {
+    icon: GitBranch,
+    title: "Workflow Management System",
+    description: "Streamlined workflows for enhanced productivity",
+    gradient: "from-teal-500 to-green-600",
+    bgAccent: "bg-teal-50",
+  },
 ];
 
 export function ServicesSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const cardsPerView = 4;
+  const maxIndex = Math.max(0, services.length - cardsPerView);
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
+  };
+
   return (
     <section
       className="relative py-12 md:py-20 overflow-hidden"
@@ -81,115 +125,173 @@ export function ServicesSection() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {services.map((service, i) => {
-            const Icon = service.icon;
-            const isITConsulting = service.title === "Strategic IT Consulting";
-            const isERP = service.title === "Enterprise Resource Planning";
-            const isCorporateDigital =
-              service.title === "Corporate Digitalization";
-            return (
-              <Card
-                key={i}
-                className={`group h-full border-0 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden ${
-                  isITConsulting || isERP || isCorporateDigital
-                    ? "text-white"
-                    : ""
-                }`}
-                style={{
-                  backgroundColor:
-                    isITConsulting || isERP || isCorporateDigital
-                      ? "transparent"
-                      : "#ffffff",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
-                  backgroundImage: isITConsulting
-                    ? "url('/it_consul.jpg')"
-                    : isERP
-                    ? "url('/ERP-image.jpg')"
-                    : isCorporateDigital
-                    ? "url('/cooperate-digitilization.png')"
-                    : "none",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                {/* High contrast overlay for IT Consulting, ERP and Corporate Digitalization cards */}
-                {(isITConsulting || isERP || isCorporateDigital) && (
-                  <>
-                    {/* Film grain texture */}
-                    <div
-                      className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
-                        mixBlendMode: "overlay",
-                      }}
-                    ></div>
-                    {/* High contrast dark overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/30 group-hover:from-black/90 group-hover:via-black/60 group-hover:to-black/40 transition-all duration-500"></div>
-                    {/* Gold accent border on hover */}
-                    <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-amber-400/60 transition-colors duration-500"></div>
-                  </>
-                )}
-                <CardHeader
-                  className={`flex flex-col p-6 relative z-10 h-full ${
-                    isITConsulting || isERP || isCorporateDigital
-                      ? "justify-end text-left"
-                      : "items-center text-center"
-                  }`}
-                >
-                  {!isITConsulting && !isERP && !isCorporateDigital && (
-                    <div
-                      className={`flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} shadow-md mb-4 group-hover:scale-110 transition-transform duration-300`}
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Previous Button */}
+          <button
+            onClick={handlePrevious}
+            disabled={currentIndex === 0}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 ${
+              currentIndex === 0
+                ? "opacity-30 cursor-not-allowed"
+                : "hover:bg-gradient-to-r hover:from-[#6D28D9] hover:to-[#A78BFA] hover:text-white hover:scale-110"
+            }`}
+            aria-label="Previous services"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={handleNext}
+            disabled={currentIndex === maxIndex}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 ${
+              currentIndex === maxIndex
+                ? "opacity-30 cursor-not-allowed"
+                : "hover:bg-gradient-to-r hover:from-[#6D28D9] hover:to-[#A78BFA] hover:text-white hover:scale-110"
+            }`}
+            aria-label="Next services"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Cards Container */}
+          <div className="overflow-hidden">
+            <div
+              className="flex gap-6 transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${
+                  currentIndex * (100 / cardsPerView + 1.5)
+                }%)`,
+              }}
+            >
+              {services.map((service, i) => {
+                const Icon = service.icon;
+                const isITConsulting =
+                  service.title === "Strategic IT Consulting";
+                const isERP = service.title === "Enterprise Resource Planning";
+                const isCorporateDigital =
+                  service.title === "Corporate Digitalization";
+                const isDMS = service.title === "Document Management";
+                return (
+                  <Card
+                    key={i}
+                    className={`group w-[calc(25%-1.125rem)] min-w-[calc(25%-1.125rem)] max-w-[calc(25%-1.125rem)] h-[420px] border-0 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden flex-shrink-0 ${
+                      isITConsulting || isERP || isCorporateDigital || isDMS
+                        ? "text-white"
+                        : ""
+                    }`}
+                    style={{
+                      backgroundColor:
+                        isITConsulting || isERP || isCorporateDigital || isDMS
+                          ? "transparent"
+                          : "#ffffff",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                      backgroundImage: isITConsulting
+                        ? "url('/it_consul.jpg')"
+                        : isERP
+                        ? "url('/ERP-image.jpg')"
+                        : isCorporateDigital
+                        ? "url('/Data-scanning.jpg')"
+                        : isDMS
+                        ? "url('/DMS-Image.jpg')"
+                        : "none",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    {/* High contrast overlay for IT Consulting, ERP, Corporate Digitalization and DMS cards */}
+                    {(isITConsulting ||
+                      isERP ||
+                      isCorporateDigital ||
+                      isDMS) && (
+                      <>
+                        {/* Film grain texture */}
+                        <div
+                          className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity duration-500"
+                          style={{
+                            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
+                            mixBlendMode: "overlay",
+                          }}
+                        ></div>
+                        {/* High contrast dark overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/30 group-hover:from-black/90 group-hover:via-black/60 group-hover:to-black/40 transition-all duration-500"></div>
+                        {/* Gold accent border on hover */}
+                        <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-amber-400/60 transition-colors duration-500"></div>
+                      </>
+                    )}
+                    <CardHeader
+                      className={`flex flex-col p-6 relative z-10 h-full ${
+                        isITConsulting || isERP || isCorporateDigital || isDMS
+                          ? "justify-end text-left"
+                          : "items-center text-center"
+                      }`}
                     >
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                  )}
+                      {!isITConsulting &&
+                        !isERP &&
+                        !isCorporateDigital &&
+                        !isDMS && (
+                          <div
+                            className={`flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} shadow-md mb-4 group-hover:scale-110 transition-transform duration-300`}
+                          >
+                            <Icon className="w-6 h-6 text-white" />
+                          </div>
+                        )}
 
-                  {isITConsulting ||
-                    isERP ||
-                    (isCorporateDigital && (
-                      <div className="flex items-center justify-start mb-4 group-hover:mb-5 transition-all duration-300">
-                        <div className="p-2 rounded-lg bg-amber-400/20 backdrop-blur-sm border border-amber-400/30 group-hover:bg-amber-400/30 group-hover:border-amber-400/50 transition-all duration-300">
-                          <Icon className="w-6 h-6 text-amber-300 group-hover:text-amber-200 drop-shadow-md" />
-                        </div>
-                      </div>
-                    ))}
+                      {isITConsulting ||
+                        isERP ||
+                        isCorporateDigital ||
+                        (isDMS && (
+                          <div className="flex items-center justify-start mb-4 group-hover:mb-5 transition-all duration-300">
+                            <div className="p-2 rounded-lg bg-amber-400/20 backdrop-blur-sm border border-amber-400/30 group-hover:bg-amber-400/30 group-hover:border-amber-400/50 transition-all duration-300">
+                              <Icon className="w-6 h-6 text-amber-300 group-hover:text-amber-200 drop-shadow-md" />
+                            </div>
+                          </div>
+                        ))}
 
-                  <CardTitle
-                    className={`font-black mb-3 tracking-tight ${
-                      isITConsulting || isERP || isCorporateDigital
-                        ? "text-2xl lg:text-3xl text-white font-inter group-hover:text-amber-50 transition-colors duration-300"
-                        : "text-lg text-slate-800"
-                    }`}
-                    style={{
-                      textShadow:
-                        isITConsulting || isERP || isCorporateDigital
-                          ? "2px 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6)"
-                          : "none",
-                    }}
-                  >
-                    {service.title}
-                  </CardTitle>
+                      <CardTitle
+                        className={`font-black mb-3 tracking-tight ${
+                          isITConsulting || isERP || isCorporateDigital || isDMS
+                            ? "text-2xl lg:text-3xl text-white font-inter group-hover:text-amber-50 transition-colors duration-300"
+                            : "text-lg text-slate-800"
+                        }`}
+                        style={{
+                          textShadow:
+                            isITConsulting ||
+                            isERP ||
+                            isCorporateDigital ||
+                            isDMS
+                              ? "2px 2px 8px rgba(0,0,0,0.8), 0 0 16px rgba(0,0,0,0.6)"
+                              : "none",
+                        }}
+                      >
+                        {service.title}
+                      </CardTitle>
 
-                  <CardDescription
-                    className={`leading-relaxed font-medium ${
-                      isITConsulting || isERP || isCorporateDigital
-                        ? "text-lg text-white/95 font-inter group-hover:text-amber-50/90 transition-colors duration-300"
-                        : "text-sm text-slate-600"
-                    }`}
-                    style={{
-                      textShadow:
-                        isITConsulting || isERP || isCorporateDigital
-                          ? "1px 1px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)"
-                          : "none",
-                    }}
-                  >
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            );
-          })}
+                      <CardDescription
+                        className={`leading-relaxed font-medium ${
+                          isITConsulting || isERP || isCorporateDigital || isDMS
+                            ? "text-lg text-white/95 font-inter group-hover:text-amber-50/90 transition-colors duration-300"
+                            : "text-sm text-slate-600"
+                        }`}
+                        style={{
+                          textShadow:
+                            isITConsulting ||
+                            isERP ||
+                            isCorporateDigital ||
+                            isDMS
+                              ? "1px 1px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.5)"
+                              : "none",
+                        }}
+                      >
+                        {service.description}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

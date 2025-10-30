@@ -63,17 +63,15 @@ export function WhyChooseSection() {
             id="why-choose-title"
             className={cn(
               "text-pretty",
-              "text-3xl font-bold tracking-tight md:text-4xl",
-              "text-foreground"
+              "text-3xl font-bold tracking-tight md:text-4xl"
             )}
+            style={{ color: "#1E1E1E" }}
           >
             Why Partner with Nexora?
           </h2>
           <p
-            className={cn(
-              "mt-4 text-balance text-sm md:text-base",
-              "text-muted-foreground"
-            )}
+            className={cn("mt-4 text-balance text-sm md:text-base")}
+            style={{ color: "#4B5563" }}
           >
             Choosing Nexora means selecting a partner committed to your success
             through unparalleled expertise and a client-centric approach
@@ -117,15 +115,14 @@ export function WhyChooseSection() {
 
                 <div>
                   <h3
-                    className={cn("text-base font-semibold", "text-foreground")}
+                    className={cn("text-base font-semibold")}
+                    style={{ color: "#1E1E1E" }}
                   >
                     {f.title}
                   </h3>
                   <p
-                    className={cn(
-                      "mt-1 text-sm leading-relaxed",
-                      "text-muted-foreground"
-                    )}
+                    className={cn("mt-1 text-sm leading-relaxed")}
+                    style={{ color: "#4B5563" }}
                   >
                     {f.description}
                   </p>
@@ -136,10 +133,10 @@ export function WhyChooseSection() {
         </div>
 
         {/* Trust indicators */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-sm">
           <Badge>15+ Years Experience</Badge>
           <Badge>200+ Clients</Badge>
-          <Badge>98% Satisfaction</Badge>
+          <Badge>100% Satisfaction</Badge>
         </div>
       </div>
     </section>
@@ -150,13 +147,13 @@ function Badge({ children }: { children: React.ReactNode }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-3 py-1",
-        "text-xs font-medium"
+        "inline-flex items-center rounded-full px-4 py-2",
+        "text-sm font-semibold"
       )}
       style={{
-        color: "hsl(var(--primary))",
-        backgroundColor: "hsl(var(--primary) / 0.08)",
-        boxShadow: "inset 0 0 0 1px hsl(var(--primary) / 0.2)",
+        color: "#1E1E1E",
+        backgroundColor: "rgba(109, 40, 217, 0.15)",
+        boxShadow: "inset 0 0 0 1px rgba(109, 40, 217, 0.3)",
       }}
     >
       {children}

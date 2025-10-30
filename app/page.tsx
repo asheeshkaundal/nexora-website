@@ -72,10 +72,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <LpNavbar1 />
-      <div className="mt-8 md:mt-12">
-        <HeroSection7 />
+      <div className="mt-3 mb-2">
+        <LpNavbar1 />
       </div>
+      <HeroSection7 />
       <ServicesSection />
       <WhyChooseSection />
       <FeatureSection3 />

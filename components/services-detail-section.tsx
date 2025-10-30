@@ -86,17 +86,17 @@ const services = [
     ],
   },
   {
-    id: "data-scanning",
-    title: "Data Scanning & Management",
+    id: "corporate-digitization",
+    title: "Corporate Digitization",
     icon: ScanLine,
     brief:
-      "Professional data scanning, digitization, and management services to convert physical documents into searchable digital assets.",
+      "Transform your organization with comprehensive digital transformation solutions that modernize business operations and enhance competitiveness.",
     image: "/professional-business-technology-team-working.jpg",
     benefits: [
-      "High-quality document scanning and digitization",
-      "OCR and text recognition capabilities",
-      "Secure data migration and storage",
-      "Searchable digital archive creation",
+      "End-to-end digital transformation strategy",
+      "Business process automation",
+      "Cloud migration and integration",
+      "Digital workplace implementation",
     ],
   },
 ];
@@ -171,24 +171,33 @@ export function ServicesDetailSection() {
                       <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 border border-primary/20">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
-                      <h2 className="text-3xl md:text-4xl font-bold text-white">
+                      <h2
+                        className="text-3xl md:text-4xl font-bold"
+                        style={{ color: "#1E1E1E" }}
+                      >
                         {service.title}
                       </h2>
                     </div>
 
-                    <p className="text-lg text-white mb-8 leading-relaxed">
+                    <p
+                      className="text-lg mb-8 leading-relaxed"
+                      style={{ color: "#374151" }}
+                    >
                       {service.brief}
                     </p>
 
                     <div className="mb-8">
-                      <h3 className="text-xl font-semibold text-white mb-4">
+                      <h3
+                        className="text-xl font-semibold mb-4"
+                        style={{ color: "#1E1E1E" }}
+                      >
                         Key Benefits
                       </h3>
                       <ul className="space-y-3">
                         {service.benefits.map((benefit, index) => (
                           <li key={index} className="flex items-start gap-3">
                             <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                            <span className="text-white">{benefit}</span>
+                            <span style={{ color: "#374151" }}>{benefit}</span>
                           </li>
                         ))}
                       </ul>
