@@ -20,13 +20,17 @@ export default function AboutPage() {
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center animate-fade-up">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight">
               About{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
                 Nexora Global
               </span>
             </h1>
+            <span
+              className="mx-auto block w-32 h-1 rounded-full bg-gradient-to-r from-primary to-accent mt-4 animate-fade-up"
+              style={{ animationDelay: "120ms" }}
+            />
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
               Empowering businesses worldwide with innovative technology
               solutions and digital transformation expertise since our
@@ -40,10 +44,13 @@ export default function AboutPage() {
       <section className="py-16 md:py-20 bg-card">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-4">
+            <div
+              className="space-y-4 animate-fade-up"
+              style={{ animationDelay: "80ms" }}
+            >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Target className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
+                  <Target className="w-6 h-6 text-white" />
                 </div>
                 <h2 className="text-3xl font-bold text-foreground">
                   Our Mission
@@ -57,10 +64,13 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div
+              className="space-y-4 animate-fade-up"
+              style={{ animationDelay: "160ms" }}
+            >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <Globe className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg flex items-center justify-center">
+                  <Globe className="w-6 h-6 text-white" />
                 </div>
                 <h2 className="text-3xl font-bold text-foreground">
                   Our Vision
@@ -88,8 +98,12 @@ export default function AboutPage() {
             ].map((stat, i) => {
               const Icon = stat.icon;
               return (
-                <div key={i} className="text-center space-y-3">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full mb-2">
+                <div
+                  key={i}
+                  className="text-center space-y-3 animate-fade-up"
+                  style={{ animationDelay: `${i * 120}ms` }}
+                >
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full mb-2 shadow-md">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
@@ -148,7 +162,10 @@ export default function AboutPage() {
             </p>
 
             <div className="space-y-8">
-              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
+              <div
+                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: "80ms" }}
+              >
                 <h3 className="text-2xl font-bold text-foreground mb-3">
                   Nexora AI
                 </h3>
@@ -159,18 +176,44 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
-                <h3 className="text-2xl font-bold text-foreground mb-3">
-                  IT Consultancy Services
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Providing expert guidance and strategic planning to align your
-                  technology investments with your business goals, ensuring
-                  optimal performance and growth.
-                </p>
+              <div
+                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: "160ms" }}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                  <div className="overflow-hidden rounded-md">
+                    <img
+                      src="/images/service-consulting.jpg"
+                      alt="IT Consulting Services"
+                      className="w-full h-48 md:h-56 object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground mb-3">
+                      IT Consultancy Services
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Providing expert guidance and strategic planning to align your
+                      technology investments with your business goals, ensuring
+                      optimal performance and growth.
+                    </p>
+                    {/* Optional: actions */}
+                    <div className="mt-6 flex gap-4">
+                      <button className="px-4 py-2 rounded-md bg-primary text-primary-foreground font-semibold">
+                        Get Quote
+                      </button>
+                      <button className="px-4 py-2 rounded-md border border-primary text-primary hover:bg-primary/5">
+                        Learn More
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
+              <div
+                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: "240ms" }}
+              >
                 <h3 className="text-2xl font-bold text-foreground mb-3">
                   Enterprise Resource Planning (ERP)
                 </h3>
@@ -181,7 +224,10 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
+              <div
+                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: "320ms" }}
+              >
                 <h3 className="text-2xl font-bold text-foreground mb-3">
                   Workflow Management System
                 </h3>
@@ -192,7 +238,10 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
+              <div
+                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: "400ms" }}
+              >
                 <h3 className="text-2xl font-bold text-foreground mb-3">
                   Corporate Digitization & Digitalization Projects
                 </h3>
@@ -204,7 +253,10 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
+              <div
+                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: "480ms" }}
+              >
                 <h3 className="text-2xl font-bold text-foreground mb-3">
                   Document Management System (DMS)
                 </h3>
@@ -263,7 +315,8 @@ export default function AboutPage() {
             ].map((value, i) => (
               <div
                 key={i}
-                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+                className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg animate-fade-up"
+                style={{ animationDelay: `${i * 100}ms` }}
               >
                 <h3 className="text-xl font-bold text-foreground mb-3">
                   {value.title}

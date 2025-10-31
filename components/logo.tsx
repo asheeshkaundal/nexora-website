@@ -1,4 +1,4 @@
-export function Logo() {
+export function Logo({ className }: { className?: string }) {
   return (
     <div
       aria-label="Nexora Global logo"
@@ -8,7 +8,7 @@ export function Logo() {
       <img
         src="/images/nexora-final.png"
         alt="Nexora Global crest logo"
-        className="h-24 md:h-32 w-auto scale-150"
+        className={`h-24 md:h-32 w-auto scale-150 ${className ?? ""}`}
       />
     </div>
   );

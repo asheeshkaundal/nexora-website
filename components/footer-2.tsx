@@ -25,12 +25,13 @@ export function Footer2() {
       role="contentinfo"
       aria-label="Site footer"
     >
-      <div className="container px-4 md:px-6 py-12">
+      <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="mb-4">
-              <Logo />
+              {/* Increase logo size specifically for footer */}
+              <Logo className="h-28 md:h-40" />
             </div>
             <p className="text-[#9CA3AF] text-sm leading-relaxed">
               Your gateway to innovative technology solutions and digital
