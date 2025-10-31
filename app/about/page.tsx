@@ -193,9 +193,9 @@ export default function AboutPage() {
                       IT Consultancy Services
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Providing expert guidance and strategic planning to align your
-                      technology investments with your business goals, ensuring
-                      optimal performance and growth.
+                      Providing expert guidance and strategic planning to align
+                      your technology investments with your business goals,
+                      ensuring optimal performance and growth.
                     </p>
                     {/* Optional: actions */}
                     <div className="mt-6 flex gap-4">
