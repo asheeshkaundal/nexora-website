@@ -33,7 +33,8 @@ export function Footer2() {
               <Logo />
             </div>
             <p className="text-[#9CA3AF] text-sm leading-relaxed">
-              Your gateway to innovative technology solutions and digital transformation. Where excellence meets innovation.
+              Your gateway to innovative technology solutions and digital
+              transformation. Where excellence meets innovation.
             </p>
             <div className="flex space-x-3">
               <Link
@@ -215,14 +216,19 @@ export function Footer2() {
                   Sales & Communication:
                 </span>
                 <span className="block">FF-69, First Floor, SS Omnia</span>
-                <span className="block">Sector-86, Gurugram, Haryana - 122012</span>
+                <span className="block">
+                  Sector-86, Gurugram, Haryana - 122012
+                </span>
               </li>
               <li className="pt-2">
                 <span className="font-medium text-white block mb-2">
                   Head Office:
                 </span>
                 <span className="block">Nexora Global Headquarters</span>
-                <span className="block">FF-69, First Floor, SS Omnia,Sector-86, Gurugram, Haryana - 122012</span>
+                <span className="block">
+                  FF-69, First Floor, SS Omnia,Sector-86, Gurugram, Haryana -
+                  122012
+                </span>
               </li>
               <li className="pt-3 space-y-2">
                 <div>
@@ -261,7 +267,8 @@ export function Footer2() {
           <p>© 2025 Nexora Global. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
-              <span style={{ color: "#A78BFA" }}>✦</span> Premium Quality Assured
+              <span style={{ color: "#A78BFA" }}>✦</span> Premium Quality
+              Assured
             </span>
             <span className="flex items-center gap-2">
               <span style={{ color: "#A78BFA" }}>✦</span> Worldwide Service
