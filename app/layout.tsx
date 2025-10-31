@@ -76,6 +76,12 @@ export default function RootLayout({
       lang="en"
       className={`${onest.variable} ${poppins.variable} ${bricolage.variable} font-sans`}
     >
+      <head>
+        {/* Ensure a proper viewport meta tag for mobile devices so the site scales to device width */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Optional: enable web app capable behavior on iOS */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+      </head>
       <body className="antialiased bg-background text-foreground">
         {children}
       </body>

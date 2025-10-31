@@ -180,34 +180,14 @@ export default function AboutPage() {
                 className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: "160ms" }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                  <div className="overflow-hidden rounded-md">
-                    <img
-                      src="/images/service-consulting.jpg"
-                      alt="IT Consulting Services"
-                      className="w-full h-48 md:h-56 object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-3">
-                      IT Consultancy Services
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Providing expert guidance and strategic planning to align
-                      your technology investments with your business goals,
-                      ensuring optimal performance and growth.
-                    </p>
-                    {/* Optional: actions */}
-                    <div className="mt-6 flex gap-4">
-                      <button className="px-4 py-2 rounded-md bg-primary text-primary-foreground font-semibold">
-                        Get Quote
-                      </button>
-                      <button className="px-4 py-2 rounded-md border border-primary text-primary hover:bg-primary/5">
-                        Learn More
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-3">
+                  IT Consultancy Services
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Providing expert guidance and strategic planning to align your
+                  technology investments with your business goals, ensuring
+                  optimal performance and growth.
+                </p>
               </div>
 
               <div

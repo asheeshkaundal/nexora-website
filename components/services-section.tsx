@@ -131,7 +131,8 @@ export function ServicesSection() {
           <button
             onClick={handlePrevious}
             disabled={currentIndex === 0}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 ${
+            // hide arrows on small screens
+            className={`hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 ${
               currentIndex === 0
                 ? "opacity-30 cursor-not-allowed"
                 : "hover:bg-gradient-to-r hover:from-[#6D28D9] hover:to-[#A78BFA] hover:text-white hover:scale-110"
@@ -145,7 +146,8 @@ export function ServicesSection() {
           <button
             onClick={handleNext}
             disabled={currentIndex === maxIndex}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 ${
+            // hide arrows on small screens
+            className={`hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 ${
               currentIndex === maxIndex
                 ? "opacity-30 cursor-not-allowed"
                 : "hover:bg-gradient-to-r hover:from-[#6D28D9] hover:to-[#A78BFA] hover:text-white hover:scale-110"
@@ -156,7 +158,8 @@ export function ServicesSection() {
           </button>
 
           {/* Cards Container */}
-          <div className="overflow-hidden">
+          {/* Desktop / tablet slider (hidden on small screens) */}
+          <div className="hidden md:block overflow-hidden">
             <div
               className="flex gap-6 transition-transform duration-500 ease-in-out"
               style={{
@@ -347,6 +350,92 @@ export function ServicesSection() {
                 );
               })}
             </div>
+          </div>
+
+          {/* Mobile stacked cards (visible on small screens) */}
+          <div className="md:hidden grid gap-6">
+            {services.map((service, i) => {
+              const Icon = service.icon;
+              const isITConsulting =
+                service.title === "Strategic IT Consulting";
+              const isERP = service.title === "Enterprise Resource Planning";
+              const isCorporateDigital =
+                service.title === "Corporate Digitalization";
+              const isCorporateDigitization =
+                service.title === "Corporate Digitization";
+              const isDMS = service.title === "Document Management";
+              const isWorkflow = service.title === "Workflow Management System";
+              const isNexoraAI = service.title === "Nexora AI";
+              const backgroundImage = isITConsulting
+                ? "url('/it_consul.jpg')"
+                : isERP
+                ? "url('/ERP-image.jpg')"
+                : isCorporateDigital
+                ? "url('/Data-scanning.jpg')"
+                : isCorporateDigitization
+                ? "url('/Digitization-image.jpg')"
+                : isDMS
+                ? "url('/DMS-new.jpg')"
+                : isWorkflow
+                ? "url('/workflow-management.jpg')"
+                : isNexoraAI
+                ? "url('/Nexora-Ai.jpg')"
+                : "none";
+
+              return (
+                <Card
+                  key={i}
+                  className={`group w-full h-auto border-0 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden p-0`}
+                  style={{
+                    backgroundColor:
+                      backgroundImage !== "none" ? "transparent" : "#ffffff",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+                    backgroundImage: backgroundImage,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  {/* If there's a background image, add a subtle overlay for readability */}
+                  {backgroundImage !== "none" && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
+                  )}
+
+                  <div className={`p-6 relative z-10`}>
+                    {/* Removed thumbnail/icon on mobile to let the background image show unobstructed */}
+                    <h3
+                      className={`font-black mb-3 tracking-tight ${
+                        isITConsulting ||
+                        isERP ||
+                        isCorporateDigital ||
+                        isCorporateDigitization ||
+                        isDMS ||
+                        isWorkflow ||
+                        isNexoraAI
+                          ? "text-2xl text-white"
+                          : "text-lg text-slate-800"
+                      }`}
+                    >
+                      {service.title}
+                    </h3>
+                    <p
+                      className={`leading-relaxed font-medium ${
+                        isITConsulting ||
+                        isERP ||
+                        isCorporateDigital ||
+                        isCorporateDigitization ||
+                        isDMS ||
+                        isWorkflow ||
+                        isNexoraAI
+                          ? "text-lg text-white/95"
+                          : "text-sm text-slate-600"
+                      }`}
+                    >
+                      {service.description}
+                    </p>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>

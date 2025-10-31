@@ -21,7 +21,7 @@ const services = [
     icon: Briefcase,
     brief:
       "Strategic technology guidance to transform your business operations and drive digital innovation across all departments.",
-    image: "/professional-business-technology-team-collaboratio.jpg",
+    image: "/service-consulting.jpg",
     benefits: [
       "Strategic technology roadmapping and planning",
       "Digital transformation consulting",
@@ -35,7 +35,7 @@ const services = [
     icon: Cog,
     brief:
       "Comprehensive ERP solutions that integrate all business processes for streamlined operations and real-time insights.",
-    image: "/professional-business-technology-team-working.jpg",
+    image: "/service-erp.jpg",
     benefits: [
       "Complete business process integration",
       "Real-time data analytics and reporting",
@@ -49,7 +49,7 @@ const services = [
     icon: RefreshCw,
     brief:
       "Transform traditional business processes into intelligent, automated digital workflows that enhance productivity.",
-    image: "/professional-business-technology-team-collaboratio.jpg",
+    image: "/service-scanning.jpg",
     benefits: [
       "Process automation and optimization",
       "Digital workflow implementation",
@@ -63,7 +63,7 @@ const services = [
     icon: FileText,
     brief:
       "Design and implement efficient workflow systems that streamline operations and improve team productivity.",
-    image: "/professional-business-technology-team-working.jpg",
+    image: "/service-workflow.jpg",
     benefits: [
       "Custom workflow design and implementation",
       "Task automation and routing",
@@ -91,7 +91,7 @@ const services = [
     icon: ScanLine,
     brief:
       "Transform your organization with comprehensive digital transformation solutions that modernize business operations and enhance competitiveness.",
-    image: "/professional-business-technology-team-working.jpg",
+    image: "/service-digitization.jpg",
     benefits: [
       "End-to-end digital transformation strategy",
       "Business process automation",
@@ -126,7 +126,8 @@ export function ServicesDetailSection() {
           }}
           className="w-full"
         >
-          <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 w-full h-auto p-1 bg-muted/50 mb-12">
+          {/* Make the tabs horizontally scrollable on small screens for a better mobile UX */}
+          <TabsList className="flex gap-3 overflow-x-auto snap-x snap-mandatory w-full h-auto p-2 bg-muted/50 mb-12">
             {services.map((service) => {
               const Icon = service.icon;
               return (
@@ -135,6 +136,7 @@ export function ServicesDetailSection() {
                   value={service.id}
                   className={cn(
                     "flex flex-col items-center gap-2 py-4 px-3 text-xs font-medium transition-all",
+                    "flex-shrink-0 snap-start min-w-[150px] md:min-w-0",
                     "data-[state=active]:bg-background data-[state=active]:text-foreground",
                     "data-[state=active]:shadow-sm"
                   )}
