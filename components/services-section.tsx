@@ -220,7 +220,7 @@ export function ServicesSection() {
                         : isWorkflow
                         ? "url('/workflow-management.jpg')"
                         : isNexoraAI
-                        ? "url('/Nexora-Ai.jpg')"
+                        ? "url('/home-nexora-ai.png')"
                         : "none",
                       backgroundSize: "cover",
                       backgroundPosition: "center",

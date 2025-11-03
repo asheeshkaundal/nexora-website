@@ -208,7 +208,7 @@ export function Footer2() {
                     href="tel:+918888813841"
                     className="hover:text-white transition-colors duration-300"
                   >
-                    +91 8888813841
+                    +91 9717127948
                   </Link>
                 </span>
               </li>
