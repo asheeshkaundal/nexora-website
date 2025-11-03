@@ -220,7 +220,7 @@ export function ServicesSection() {
                         : isWorkflow
                         ? "url('/workflow-management.jpg')"
                         : isNexoraAI
-                        ? "url('/home-nexora-ai.png')"
+                        ? "url('/home-ai-3.jpg')"
                         : "none",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
@@ -249,6 +249,28 @@ export function ServicesSection() {
                         <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-amber-400/60 transition-colors duration-500"></div>
                       </>
                     )}
+                    {/* Top-right badge for all cards */}
+                    <div className="absolute top-4 right-4 z-20">
+                      {(() => {
+                        const badgeBg =
+                          isITConsulting ||
+                          isERP ||
+                          isCorporateDigital ||
+                          isCorporateDigitization ||
+                          isDMS ||
+                          isWorkflow ||
+                          isNexoraAI
+                            ? "bg-amber-400/20 border border-amber-400/30"
+                            : `bg-gradient-to-br ${service.gradient}`;
+                        return (
+                          <div
+                            className={`p-2 rounded-lg ${badgeBg} shadow-md backdrop-blur-sm`}
+                          >
+                            <Icon className="w-4 h-4 text-white" />
+                          </div>
+                        );
+                      })()}
+                    </div>
                     <CardHeader
                       className={`flex flex-col p-6 relative z-10 h-full ${
                         isITConsulting ||
@@ -262,33 +284,7 @@ export function ServicesSection() {
                           : "items-center text-center"
                       }`}
                     >
-                      {!isITConsulting &&
-                        !isERP &&
-                        !isCorporateDigital &&
-                        !isCorporateDigitization &&
-                        !isDMS &&
-                        !isWorkflow &&
-                        !isNexoraAI && (
-                          <div
-                            className={`flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} shadow-md mb-4 group-hover:scale-110 transition-transform duration-300`}
-                          >
-                            <Icon className="w-6 h-6 text-white" />
-                          </div>
-                        )}
-
-                      {(isITConsulting ||
-                        isERP ||
-                        isCorporateDigital ||
-                        isCorporateDigitization ||
-                        isDMS ||
-                        isWorkflow ||
-                        isNexoraAI) && (
-                        <div className="flex items-center justify-start mb-4 group-hover:mb-5 transition-all duration-300">
-                          <div className="p-2 rounded-lg bg-amber-400/20 backdrop-blur-sm border border-amber-400/30 group-hover:bg-amber-400/30 group-hover:border-amber-400/50 transition-all duration-300">
-                            <Icon className="w-6 h-6 text-amber-300 group-hover:text-amber-200 drop-shadow-md" />
-                          </div>
-                        </div>
-                      )}
+                      {/* Icons removed from center/left per design — badge at top-right remains */}
 
                       <CardTitle
                         className={`font-black mb-3 tracking-tight ${
@@ -399,6 +395,29 @@ export function ServicesSection() {
                   {backgroundImage !== "none" && (
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/10"></div>
                   )}
+
+                  {/* Top-right badge for mobile cards (same visual as desktop) */}
+                  <div className="absolute top-4 right-4 z-20">
+                    {(() => {
+                      const badgeBg =
+                        isITConsulting ||
+                        isERP ||
+                        isCorporateDigital ||
+                        isCorporateDigitization ||
+                        isDMS ||
+                        isWorkflow ||
+                        isNexoraAI
+                          ? "bg-amber-400/20 border border-amber-400/30"
+                          : `bg-gradient-to-br ${service.gradient}`;
+                      return (
+                        <div
+                          className={`p-2 rounded-lg ${badgeBg} shadow-md backdrop-blur-sm`}
+                        >
+                          <Icon className="w-4 h-4 text-white" />
+                        </div>
+                      );
+                    })()}
+                  </div>
 
                   <div className={`p-6 relative z-10`}>
                     {/* Removed thumbnail/icon on mobile to let the background image show unobstructed */}
