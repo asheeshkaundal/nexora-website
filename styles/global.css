@@ -16,6 +16,11 @@
   .animate-fade-up-slow {
     animation: fade-up 1000ms ease both;
   }
+  /* background video subtle pan/zoom (Ken Burns) */
+  .bg-video-pan {
+    animation: bg-pan 24s ease-in-out infinite alternate;
+    transform-origin: center center;
+  }
 }
 
 @layer base {
@@ -27,6 +32,14 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  @keyframes bg-pan {
+    0% {
+      transform: scale(1.06) translateY(0%);
+    }
+    100% {
+      transform: scale(1) translateY(-3%);
     }
   }
 }

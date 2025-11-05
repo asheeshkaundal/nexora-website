@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import CustomDropdown from "@/components/ui/custom-dropdown";
 
@@ -20,46 +20,7 @@ export default function GetStartedStep1() {
     // hydrate if missing (handled above)
   }, []);
 
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-
-  useEffect(() => {
-    const mq = window.matchMedia?.("(prefers-reduced-motion: reduce)");
-    function applyPref() {
-      const el =
-        videoRef.current ||
-        (document.getElementById(
-          "get-started-bg-video"
-        ) as HTMLVideoElement | null);
-      if (!el) return;
-      if (mq && mq.matches) {
-        try {
-          el.pause();
-        } catch {}
-        try {
-          el.autoplay = false;
-        } catch {}
-        try {
-          el.loop = false;
-        } catch {}
-      } else {
-        try {
-          el.loop = true;
-        } catch {}
-        const p = el.play?.();
-        if (p && p.catch) p.catch(() => {});
-      }
-    }
-    applyPref();
-    if (mq) {
-      const listener = () => applyPref();
-      if (mq.addEventListener) mq.addEventListener("change", listener);
-      else mq.addListener(listener as any);
-      return () => {
-        if (mq.removeEventListener) mq.removeEventListener("change", listener);
-        else mq.removeListener(listener as any);
-      };
-    }
-  }, []);
+  // background video removed per user request
 
   function update(key: string, value: any) {
     const next = { ...form, [key]: value };
@@ -91,20 +52,7 @@ export default function GetStartedStep1() {
       className="min-h-screen py-16"
       style={{ background: "linear-gradient(180deg,#F8FAFF 0%, #F3F4F6 60%)" }}
     >
-      <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
-        <video
-          ref={videoRef}
-          id="get-started-bg-video"
-          className="min-w-full min-h-full object-cover opacity-30"
-          src="/form-animation.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 -z-10 bg-black/20 pointer-events-none" />
-      </div>
+      {/* background video removed */}
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
           <header
