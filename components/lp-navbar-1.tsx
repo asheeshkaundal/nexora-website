@@ -51,7 +51,7 @@ export function LpNavbar1() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex flex-row gap-5 items-center h-full">
           <NavMenuItems />
-          <Link href="#get-started">
+          <Link href="/get-started">
             <Button
               className="text-white font-semibold rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105"
               style={{
@@ -83,7 +83,7 @@ export function LpNavbar1() {
               </SheetHeader>
               <div className="mt-6 flex flex-col gap-4">
                 <NavMenuItems />
-                <Link href="#get-started">
+                <Link href="/get-started">
                   <Button
                     className="w-full text-white font-semibold rounded-lg shadow-md transition-all duration-300"
                     style={{
