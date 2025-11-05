@@ -208,17 +208,17 @@ export function ServicesSection() {
                           : "#ffffff",
                       boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
                       backgroundImage: isITConsulting
-                        ? "url('/it_consul.jpg')"
+                        ? "url('/service.png')"
                         : isERP
-                        ? "url('/ERP-image.jpg')"
+                        ? "url('/erp-image.png')"
                         : isCorporateDigital
                         ? "url('/Data-scanning.jpg')"
                         : isCorporateDigitization
-                        ? "url('/Digitization-image.jpg')"
+                        ? "url('/digitization-image.png')"
                         : isDMS
-                        ? "url('/DMS-new.jpg')"
+                        ? "url('/dms-image1.png')"
                         : isWorkflow
-                        ? "url('/workflow-management.jpg')"
+                        ? "url('/workflow-management-.png')"
                         : isNexoraAI
                         ? "url('/home-ai-3.jpg')"
                         : "none",
