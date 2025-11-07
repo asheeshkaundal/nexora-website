@@ -91,31 +91,29 @@ export default function CustomDropdown({
           />
         </svg>
       </button>
+    
+
 
       {open && (
-        <div
-          className="absolute right-0 left-0 mt-2 z-50 rounded-lg shadow-xl bg-slate-800 text-white border border-slate-700"
-          style={{ maxHeight: 320, overflow: "hidden" }}
-        >
-          <div className="p-3">
-            {searchable && (
+        <div className="absolute right-0 left-0 mt-2 z-50 rounded-lg shadow-xl bg-slate-800 text-white border border-slate-700 flex flex-col max-h-[350px]">
+          {searchable && (
+            <div className="p-3 border-b border-slate-700 flex-shrink-0">
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search..."
-                className="w-full px-3 py-2 rounded-md bg-slate-700 placeholder:text-slate-400 text-white border border-slate-600"
+                className="w-full px-3 py-2 rounded-md bg-slate-700 placeholder:text-slate-400 text-white border border-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-500"
               />
-            )}
-          </div>
+            </div>
+          )}
+       
 
-          <div
-            className="overflow-y-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800 hover:scrollbar-thumb-slate-500"
-            style={{ maxHeight: 240 }}
-          >
+
+          <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800 hover:scrollbar-thumb-slate-500 flex-1 min-h-0">
             {filtered.map((opt) => (
               <label
                 key={opt.value}
-                className="flex items-center gap-3 px-4 py-3 hover:bg-slate-700 cursor-pointer"
+                className="flex items-center gap-3 px-4 py-3 hover:bg-slate-700 cursor-pointer transition-colors"
               >
                 {multiple ? (
                   <input
@@ -137,7 +135,9 @@ export default function CustomDropdown({
               </label>
             ))}
             {filtered.length === 0 && (
-              <div className="p-4 text-slate-400">No results</div>
+              <div className="p-4 text-center text-slate-400">
+                No results found
+              </div>
             )}
           </div>
         </div>
