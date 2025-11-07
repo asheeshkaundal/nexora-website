@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
@@ -158,11 +159,17 @@ export function ServicesDetailSection() {
                 <div className="grid lg:grid-cols-5 gap-0 min-h-[500px] border-2 border-primary/30 rounded-lg overflow-hidden shadow-lg">
                   {/* Image Section - 40% */}
                   <div className="lg:col-span-2 relative overflow-hidden group">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:brightness-110"
-                    />
+                    <div
+                      className="relative w-full h-0"
+                      style={{ paddingBottom: "66.66%" }}
+                    >
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:brightness-110"
+                      />
+                    </div>
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/20 transition-opacity duration-700 group-hover:opacity-50" />
                     <div className="absolute inset-0 bg-primary/0 transition-all duration-700 group-hover:bg-primary/10" />
                   </div>

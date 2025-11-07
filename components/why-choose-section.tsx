@@ -1,4 +1,5 @@
 import type React from "react";
+import Image from "next/image";
 import { CheckCircle2, Puzzle, ShieldCheck, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -50,11 +51,14 @@ export function WhyChooseSection() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-10"
       >
-        <img
-          src="/images/why-choose-bg.jpg"
-          alt=""
-          className="h-full w-full object-cover"
-        />
+        <div className="relative w-full h-full">
+          <Image
+            src="/images/why-choose-bg.jpg"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6">
