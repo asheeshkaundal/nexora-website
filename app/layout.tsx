@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata, Viewport } from "next";
 import { Onest, Poppins, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+import FloatingButtons from "@/components/ui/floating-buttons";
 
 const onest = Onest({
   subsets: ["latin"],
@@ -84,6 +85,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased bg-background text-foreground">
         {children}
+        <FloatingButtons />
       </body>
     </html>
   );

@@ -28,7 +28,7 @@ export default function ScrollToTop() {
       aria-label="Scroll to top"
       title="Scroll to top"
       onClick={handleClick}
-      className={`fixed right-6 bottom-6 z-40 w-12 h-12 bg-[#3BAFA6] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transform transition-all duration-300 ${
+      className={`fixed right-6 bottom-6 z-40 w-14 h-14 bg-[#3BAFA6] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transform transition-all duration-300 hover:shadow-xl ${
         visible
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-2 pointer-events-none"
@@ -39,10 +39,10 @@ export default function ScrollToTop() {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth={2}
+        strokeWidth={2.5}
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="w-6 h-6"
+        className="w-7 h-7"
         aria-hidden="true"
       >
         <polyline points="18 15 12 9 6 15" />
