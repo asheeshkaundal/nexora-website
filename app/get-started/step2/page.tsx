@@ -52,7 +52,7 @@ export default function GetStartedStep2() {
               Smart Follow-Up
             </h1>
             <p className="text-white/90 mt-1">
-              Section 2 — We'll ask a few targeted questions
+              Section 2 — We will ask a few targeted questions
             </p>
           </header>
 

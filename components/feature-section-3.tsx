@@ -51,7 +51,7 @@ export function FeatureSection3() {
               Getting started is easy!
             </h2>
             <p className="text-base text-white/80">
-              In just 2 simple steps, you're ready to go:
+              In just 2 simple steps, you are ready to go:
             </p>
           </div>
           <div className="flex flex-col gap-6">

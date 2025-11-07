@@ -47,11 +47,11 @@ export function FaqSection1() {
             id="faq-heading"
             className="text-3xl md:text-4xl font-bold text-foreground"
           >
-            Got questions? We've got answers.
+            Got questions? We have answers.
           </h1>
           <p className="text-muted-foreground">
-            We've compiled the most important information to help you get the
-            most out of your experience. Can't find what you're looking for?{" "}
+            We have compiled the most important information to help you get the
+            most out of your experience. Cannot find what you are looking for?{" "}
             <Link href="#" className="text-primary underline">
               Contact us.
             </Link>

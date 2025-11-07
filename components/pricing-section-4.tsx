@@ -102,7 +102,7 @@ export function PricingSection4() {
             <h2 id="pricing-section-title-4" className="text-3xl md:text-4xl font-bold">
               Simple, transparent pricing
             </h2>
-            <p className="text-base text-muted-foreground">Choose a plan that fits your team's needs.</p>
+            <p className="text-base text-muted-foreground">Choose a plan that fits the needs of your team.</p>
           </div>
 
           <Tabs value={billingPeriod} onValueChange={setBillingPeriod} className="w-fit">
@@ -149,7 +149,7 @@ export function PricingSection4() {
 
                 <div className="space-y-4">
                   <p className="text-sm font-medium">
-                    {index === 0 ? "What's included:" : `Everything in ${pricingData.plans[index - 1].name}, plus:`}
+                    {index === 0 ? "What is included:" : `Everything in ${pricingData.plans[index - 1].name}, plus:`}
                   </p>
                   <div className="flex flex-col gap-4">
                     {plan.features.map((feature, i) => (
