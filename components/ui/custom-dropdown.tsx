@@ -108,7 +108,10 @@ export default function CustomDropdown({
             )}
           </div>
 
-          <div className="overflow-y-auto" style={{ maxHeight: 240 }}>
+          <div
+            className="overflow-y-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800 hover:scrollbar-thumb-slate-500"
+            style={{ maxHeight: 240 }}
+          >
             {filtered.map((opt) => (
               <label
                 key={opt.value}

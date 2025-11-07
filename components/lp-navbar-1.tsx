@@ -41,7 +41,7 @@ export function LpNavbar1() {
   return (
     <nav
       className="sticky top-0 z-50 isolate h-20 flex items-center rounded-xl mx-4 md:mx-6"
-      style={{ backgroundColor: "#2D2F39" }}
+      style={{ backgroundColor: "#1F2128" }}
     >
       <div className="container relative px-6 flex flex-row items-center justify-between gap-4 md:gap-6 m-auto h-full">
         <Link href="/" className="flex items-center">
@@ -75,7 +75,7 @@ export function LpNavbar1() {
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-[#2D2F39]">
+            <SheetContent side="right" className="bg-[#1F2128]">
               <SheetHeader>
                 <SheetTitle className="text-[#F9FAFB]">
                   Nexora Global
