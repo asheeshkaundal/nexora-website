@@ -59,7 +59,7 @@ export default function GetStartedStep3() {
     >
       {/* background video removed */}
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden">
+        <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-visible">
           <header
             className="p-6"
             style={{

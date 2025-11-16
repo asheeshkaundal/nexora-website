@@ -91,8 +91,6 @@ export default function CustomDropdown({
           />
         </svg>
       </button>
-    
-
 
       {open && (
         <div className="absolute right-0 left-0 mt-2 z-50 rounded-lg shadow-xl bg-slate-800 text-white border border-slate-700 flex flex-col max-h-[350px]">
@@ -106,10 +104,29 @@ export default function CustomDropdown({
               />
             </div>
           )}
-       
 
-
-          <div className="overflow-y-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800 hover:scrollbar-thumb-slate-500 flex-1 min-h-0">
+          <div
+            className="overflow-y-auto flex-1 min-h-0"
+            style={{
+              scrollbarWidth: "thin",
+              scrollbarColor: "#475569 #1e293b",
+            }}
+          >
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                width: 8px;
+              }
+              div::-webkit-scrollbar-track {
+                background: #1e293b;
+              }
+              div::-webkit-scrollbar-thumb {
+                background: #475569;
+                border-radius: 4px;
+              }
+              div::-webkit-scrollbar-thumb:hover {
+                background: #64748b;
+              }
+            `}</style>
             {filtered.map((opt) => (
               <label
                 key={opt.value}
