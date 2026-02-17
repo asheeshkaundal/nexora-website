@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     if (!name || !phone || !email || !message) {
       return NextResponse.json(
         { error: "All fields are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json(
           { message: "Email sent successfully via SMTP!" },
-          { status: 200 }
+          { status: 200 },
         );
       } catch (err) {
         console.error("SMTP send failed:", err);
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
     // 2) Web3Forms (validate key first then attempt)
     console.log(
       "SEND-EMAIL: WEB3FORMS_ACCESS_KEY present?",
-      !!process.env.WEB3FORMS_ACCESS_KEY
+      !!process.env.WEB3FORMS_ACCESS_KEY,
     );
     const rawWeb3Key = process.env.WEB3FORMS_ACCESS_KEY
       ? process.env.WEB3FORMS_ACCESS_KEY.trim()
@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
       if (!uuidRegex.test(rawWeb3Key)) {
         console.error(
           "SEND-EMAIL: WEB3FORMS_ACCESS_KEY has invalid UUID format",
-          rawWeb3Key
+          rawWeb3Key,
         );
         lastError = {
           provider: "Web3Forms",
@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
       } else {
         try {
           console.log(
-            "SEND-EMAIL: Attempting Web3Forms submit (will not print key)"
+            "SEND-EMAIL: Attempting Web3Forms submit (will not print key)",
           );
           const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
@@ -110,24 +110,43 @@ export async function POST(request: NextRequest) {
             }),
           });
 
-          const data = await response.json();
-          console.log("SEND-EMAIL: Web3Forms response:", data);
-          if (data && data.success) {
-            return NextResponse.json(
-              { message: "Email sent successfully!" },
-              { status: 200 }
+          // Check if response is actually JSON before parsing
+          const contentType = response.headers.get("content-type");
+          const responseText = await response.text();
+          
+          if (!contentType || !contentType.includes("application/json")) {
+            console.error(
+              "SEND-EMAIL: Web3Forms returned non-JSON response (likely HTML error page)",
             );
-          }
+            console.error("Response preview:", responseText.substring(0, 200));
+            lastError = {
+              provider: "Web3Forms",
+              message:
+                "Invalid Web3Forms access key. Please verify your key at https://web3forms.com or check if it needs to be activated.",
+              status: 400,
+            };
+          } else {
+            const data = JSON.parse(responseText);
+            console.log("SEND-EMAIL: Web3Forms response:", data);
+            if (data && data.success) {
+              return NextResponse.json(
+                { message: "Email sent successfully!" },
+                { status: 200 },
+              );
+            }
 
-          // record error and continue to fallbacks
-          console.error("Web3Forms send failed:", data);
-          const statusForClient =
-            response.status && response.status !== 200 ? response.status : 502;
-          lastError = {
-            provider: "Web3Forms",
-            message: data?.error || data?.message || JSON.stringify(data),
-            status: statusForClient,
-          };
+            // record error and continue to fallbacks
+            console.error("Web3Forms send failed:", data);
+            const statusForClient =
+              response.status && response.status !== 200
+                ? response.status
+                : 502;
+            lastError = {
+              provider: "Web3Forms",
+              message: data?.error || data?.message || JSON.stringify(data),
+              status: statusForClient,
+            };
+          }
         } catch (err) {
           console.error("Web3Forms request error:", err);
           lastError = { provider: "Web3Forms", message: String(err) };
@@ -154,7 +173,7 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json(
           { message: "Email sent successfully via Resend!" },
-          { status: 200 }
+          { status: 200 },
         );
       } catch (err) {
         console.error("Resend send failed:", err);
@@ -166,7 +185,7 @@ export async function POST(request: NextRequest) {
     if (lastError) {
       return NextResponse.json(
         { error: `${lastError.provider} error: ${lastError.message}` },
-        { status: lastError.status || 500 }
+        { status: lastError.status || 500 },
       );
     }
 
@@ -175,13 +194,13 @@ export async function POST(request: NextRequest) {
         error:
           "No email provider configured. Set WEB3FORMS_ACCESS_KEY, RESEND_API_KEY, or SMTP env vars (SMTP_HOST, SMTP_USER, SMTP_PASS).",
       },
-      { status: 500 }
+      { status: 500 },
     );
   } catch (error) {
     console.error("Error sending email:", error);
     return NextResponse.json(
       { error: "Failed to send email. Please try again later." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
