@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
           // Check if response is actually JSON before parsing
           const contentType = response.headers.get("content-type");
           const responseText = await response.text();
-          
+
           if (!contentType || !contentType.includes("application/json")) {
             console.error(
               "SEND-EMAIL: Web3Forms returned non-JSON response (likely HTML error page)",
