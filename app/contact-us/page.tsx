@@ -229,7 +229,7 @@ export default function ContactPage() {
                           EMAIL
                         </h3>
                         <p className="text-gray-600 text-sm sm:text-base break-all font-medium">
-                          asheesh.kaundal@nxglobal.in
+                          sales@nxglobal.in
                         </p>
                       </div>
                     </div>
