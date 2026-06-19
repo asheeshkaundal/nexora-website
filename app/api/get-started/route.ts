@@ -125,7 +125,7 @@ Submitted at: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
 
         await transporter.sendMail({
           from,
-          to: process.env.SMTP_USER,
+          to: "sales@nxglobal.in",
           subject,
           text: emailText,
           html: emailHtml,

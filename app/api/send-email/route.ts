@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
 
         await transporter.sendMail({
           from,
-          to: "asheesh.kaundal@nxglobal.in",
+          to: "sales@nxglobal.in",
           subject,
           text: emailText,
           html: `<pre style="white-space:pre-wrap;font-family:inherit">${emailText}</pre>`,
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
               access_key: rawWeb3Key,
               subject,
               from_name: "Nexora Global Website",
-              to: "asheesh.kaundal@nxglobal.in",
+              to: "sales@nxglobal.in",
               name,
               email,
               phone,
@@ -166,7 +166,7 @@ export async function POST(request: NextRequest) {
 
         await resend.emails.send({
           from,
-          to: "asheesh.kaundal@nxglobal.in",
+          to: "sales@nxglobal.in",
           subject,
           html: `<pre style="white-space:pre-wrap;font-family:inherit">${emailText}</pre>`,
         });
