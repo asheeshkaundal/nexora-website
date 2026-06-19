@@ -34,6 +34,11 @@ export default function GetStartedStep2() {
 
   const interest = form.areaOfInterest || "";
 
+  const showERP = interest.includes("ERP") || interest === "";
+  const showDMS = interest.includes("DMS") || interest === "";
+  const showAI = interest.includes("AI") || interest === "";
+  const showIT = interest.includes("IT") || interest === "";
+
   return (
     <main
       className="min-h-screen py-16"
@@ -57,7 +62,7 @@ export default function GetStartedStep2() {
           </header>
 
           <div className="p-8 space-y-6">
-            {interest.includes("ERP") && (
+            {showERP && (
               <section className="p-4 bg-white rounded-md shadow-sm">
                 <h3 className="font-semibold mb-3">ERP/WMS</h3>
                 <label className="block mb-2">
@@ -92,7 +97,7 @@ export default function GetStartedStep2() {
               </section>
             )}
 
-            {interest.includes("DMS") && (
+            {showDMS && (
               <section className="p-4 bg-white rounded-md shadow-sm">
                 <h3 className="font-semibold mb-3">DMS / Scanning</h3>
                 <label className="block mb-2">
@@ -126,7 +131,7 @@ export default function GetStartedStep2() {
               </section>
             )}
 
-            {interest.includes("AI") && (
+            {showAI && (
               <section className="p-4 bg-white rounded-md shadow-sm">
                 <h3 className="font-semibold mb-3">Nexora AI</h3>
                 <label className="block mb-2">
@@ -164,7 +169,7 @@ export default function GetStartedStep2() {
               </section>
             )}
 
-            {interest.includes("IT Support") && (
+            {showIT && (
               <section className="p-4 bg-white rounded-md shadow-sm">
                 <h3 className="font-semibold mb-3">IT Strategy & Support</h3>
                 <label>
