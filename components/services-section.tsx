@@ -210,18 +210,18 @@ export function ServicesSection() {
                       backgroundImage: isITConsulting
                         ? "url('/service.png')"
                         : isERP
-                        ? "url('/erp-image.png')"
-                        : isCorporateDigital
-                        ? "url('/Data-scanning.jpg')"
-                        : isCorporateDigitization
-                        ? "url('/digitization-image.png')"
-                        : isDMS
-                        ? "url('/dms-image1.png')"
-                        : isWorkflow
-                        ? "url('/workflow-management-.png')"
-                        : isNexoraAI
-                        ? "url('/home-ai-3.jpg')"
-                        : "none",
+                          ? "url('/erp-image.png')"
+                          : isCorporateDigital
+                            ? "url('/Data-scanning.jpg')"
+                            : isCorporateDigitization
+                              ? "url('/digitization-image.png')"
+                              : isDMS
+                                ? "url('/dms-image1.png')"
+                                : isWorkflow
+                                  ? "url('/workflow-management-.png')"
+                                  : isNexoraAI
+                                    ? "url('/strategic_it.png')"
+                                    : "none",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }}
@@ -365,18 +365,18 @@ export function ServicesSection() {
               const backgroundImage = isITConsulting
                 ? "url('/it_consul.jpg')"
                 : isERP
-                ? "url('/ERP-image.jpg')"
-                : isCorporateDigital
-                ? "url('/Data-scanning.jpg')"
-                : isCorporateDigitization
-                ? "url('/Digitization-image.jpg')"
-                : isDMS
-                ? "url('/DMS-new.jpg')"
-                : isWorkflow
-                ? "url('/workflow-management.jpg')"
-                : isNexoraAI
-                ? "url('/Nexora-Ai.jpg')"
-                : "none";
+                  ? "url('/ERP-image.jpg')"
+                  : isCorporateDigital
+                    ? "url('/Data-scanning.jpg')"
+                    : isCorporateDigitization
+                      ? "url('/Digitization-image.jpg')"
+                      : isDMS
+                        ? "url('/DMS-new.jpg')"
+                        : isWorkflow
+                          ? "url('/workflow-management.jpg')"
+                          : isNexoraAI
+                            ? "url('/strategic_it.png')"
+                            : "none";
 
               return (
                 <Card
