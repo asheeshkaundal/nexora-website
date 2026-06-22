@@ -197,7 +197,7 @@ export function Footer2() {
                     href="mailto:asheesh.kaundal@nxgobal.com"
                     className="hover:text-white transition-colors duration-300"
                   >
-                    asheesh.kaundal@nxgobal.com
+                    sales@nxglobal.in
                   </Link>
                 </span>
               </li>
@@ -216,9 +216,9 @@ export function Footer2() {
                 <span className="font-medium text-white block mb-2">
                   Sales & Communication:
                 </span>
-                <span className="block">FF-69, First Floor, SS Omnia</span>
+                <span className="block">FF-69 & 78, Nexora Global Private Limited, Ss Omnia</span>
                 <span className="block">
-                  Sector-86, Gurugram, Haryana - 122012
+                   Sector 86, Gurugram, Haryana 122001
                 </span>
               </li>
               <li className="pt-2">
@@ -227,8 +227,7 @@ export function Footer2() {
                 </span>
                 <span className="block">Nexora Global Headquarters</span>
                 <span className="block">
-                  FF-69, First Floor, SS Omnia,Sector-86, Gurugram, Haryana -
-                  122012
+                 FF-69 & 78, Nexora Global Private Limited, Ss Omnia, Sector 86, Gurugram, Haryana 122001
                 </span>
               </li>
               <li className="pt-3 space-y-2">
